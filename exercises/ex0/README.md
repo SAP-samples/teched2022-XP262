@@ -1,12 +1,12 @@
-# Level 1 Heading
+# Getting Started
 
-In this exercise, you will...
+In this exercise, you will get to know a few user credentials that you need to remember throughout this session. Please do not use any other user other than the one intended for you. 
 
-## Level 2 Heading
+## Your needed users
 
-After completing these steps you will have....
+There's only two users that you need in the entire session. Both of them are provided by SAP, please do not use your personal users for the subsequent exercises.
 
-1.	Click here.
+1.	Since you will be using an extension application for an SAP S/4HANA on-premise system, you'll obviously need a user to ju.
 <br>![](/exercises/ex0/images/00_00_0010.png)
 
 2.	Insert this code.
