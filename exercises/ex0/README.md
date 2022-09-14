@@ -1,24 +1,32 @@
 # Getting Started
 
-In this exercise, you will get to know a few user credentials that you need to remember throughout this session. Please do not use any other user other than the one intended for you. 
+Before you start work on the existing extension application, let's make sure you have all of the tools you need to complete this session successfully. This exercise will give you a few login credentials that you will need to remember throughout the session. **Please do not use any other user than the one assigned to you.**
 
-## Your needed users
+There are only two users that you need in the entire session. Both of them are provided by SAP, please do not use your personal users for the subsequent exercises.
 
-There's only two users that you need in the entire session. Both of them are provided by SAP, please do not use your personal users for the subsequent exercises.
+## Test SAP S/4HANA access
 
-1.	Since you will be using an extension application for an SAP S/4HANA on-premise system, you'll obviously need a user to ju.
-<br>![](/exercises/ex0/images/00_00_0010.png)
+The _source system_ so to speak for our extension application is an SAP S/4HANA on-premise system. You will mostly work in the transaction **BP** to create/modify business partners which will trigger events for SAP Event Mesh or to check changes to business partners that have been made using the SAP BTP extension application. This user is used for tasks that are usually done by a functional end user.
 
-2.	Insert this code.
-``` abap
- DATA(params) = request->get_form_fields(  ).
- READ TABLE params REFERENCE INTO DATA(param) WITH KEY name = 'cmd'.
-  IF sy-subrc <> 0.
-    response->set_status( i_code = 400
-                     i_reason = 'Bad request').
-    RETURN.
-  ENDIF.
-```
+1. Log on to the SAP S/4HANA on-premise system using the SAPGUI on your Desktop. Therefore, open the SAPGUI on your Desktop. 
+
+2. Select (TODO: Enter correct system name, systems not yet available) from the list of systems. 
+
+3. Enter the following credentials: 
+
+* Client: 100
+* User: BPXX
+* Password: BPXX
+
+**IMPORTANT:** XXX is the UserID on your desk. In case 01 is your UserID, please use BP01 as the user for the SAP S/4HANA sytem and BP01 also as password.
+(TODO: check if BP01 is possible as password)
+
+4. Enter **bp** as the transaction code and hit **Enter** to open the transaction. 
+
+
+## Test SAP BTP access
+
+Of course, you will also receive a user for the SAP BTP in order to be able to access your very own existing extension application and the corresponding services of this scenario. 
 
 ## Summary
 
