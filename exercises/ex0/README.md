@@ -21,7 +21,9 @@ The _source system_ so to speak for our extension application is an SAP S/4HANA 
 **IMPORTANT:** XXX is the UserID on your desk. In case 01 is your UserID, please use BP01 as the user for the SAP S/4HANA sytem and BP01 also as password.
 (TODO: check if BP01 is possible as password)
 
-4. Enter **bp** as the transaction code and hit **Enter** to open the transaction. 
+4. Enter **bp** as the transaction code and hit **Enter** to open the transaction. Alternatively you can also you use double-click the entry in your user menu. 
+
+[How to enter the Business Partner transaction](erxercises/images/bp_transaction_code.png)
 
 
 ## Test SAP BTP access
