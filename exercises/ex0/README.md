@@ -23,12 +23,14 @@ The _source system_ so to speak for our extension application is an SAP S/4HANA 
 
 4. Enter **bp** as the transaction code and hit **Enter** to open the transaction. Alternatively you can also you use double-click the entry in your user menu. 
 
-[How to enter the Business Partner transaction](erxercises/images/bp_transaction_code.png)
+![How to enter the Business Partner transaction](./images/bp_transaction_code.png)
 
 
 ## Test SAP BTP access
 
 Of course, you will also receive a user for the SAP BTP in order to be able to access your very own existing extension application and the corresponding services of this scenario. 
+
+1. Open the SAP BTP Cockpit: 
 
 ## Summary
 
