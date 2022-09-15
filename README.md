@@ -23,14 +23,14 @@ If you complete an exercise early, please resist the urge to go on to the next o
 Provide the exercise content here directly in README.md using [markdown](https://guides.github.com/features/mastering-markdown/) and linking to the specific exercise pages, below is an example.
 
 - [Getting Started](exercises/ex0/)
-- [Exercise 1 - First Exercise Description](exercises/ex1/)
-    - [Exercise 1.1 - Exercise 1 Sub Exercise 1 Description](exercises/ex1#exercise-11-sub-exercise-1-description)
-    - [Exercise 1.2 - Exercise 1 Sub Exercise 2 Description](exercises/ex1#exercise-12-sub-exercise-2-description)
-- [Exercise 2 - Second Exercise Description](exercises/ex2/)
-    - [Exercise 2.1 - Exercise 2 Sub Exercise 1 Description](exercises/ex2#exercise-21-sub-exercise-1-description)
-    - [Exercise 2.2 - Exercise 2 Sub Exercise 2 Description](exercises/ex2#exercise-22-sub-exercise-2-description)
+- [Exercise 1 - Understand the Dataflow using APIs and Events](exercises/ex1/)
+    - [Exercise 1.1 - How does SAP Event Mesh help in this scenario?](exercises/ex1#exercise-11-sub-exercise-1-description)
+    - [Exercise 1.2 - How does SAP Cloud Connector and SAP Private Link service help?](exercises/ex1#exercise-12-sub-exercise-2-description)
+- [Exercise 2 - Get in touch with your data using SAP HANA Cloud and the SAP HANA Database Explorer](exercises/ex1/)
+- [Exercise 3 - How does my application behave?](exercises/ex2/)
+    - [Exercise 3.1 - Work with the pre-built Kibana dashboards of application logging](exercises/ex2#exercise-21-sub-exercise-1-description)
+    - [Exercise 3.2 - get pro-active information about your apps by using SAP Alert Notification](exercises/ex2#exercise-21-sub-exercise-1-description)
 
-  
 **OR** Link to the Tutorial Navigator for example...
 
 Start the exercises [here](https://developers.sap.com/tutorials/abap-environment-trial-onboarding.html).
