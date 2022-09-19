@@ -12,7 +12,7 @@ Let's have a look at your extension application what it all looks like in action
 
 ## Exercise 1.1 Get to know the SAP Event Mesh management dashboard
 
-SAP Event Mesh is a fully managed service on SAP BTP. 
+SAP Event Mesh is a fully managed service on SAP BTP and offers a management dashboard out of the box. 
 
 ## Exercise 1.2 Check the status of your application using the SAP BTP Cockpit
 ## Exercise 1.3 Create a new business partner in SAP S/4HANA using the SAPGUI
