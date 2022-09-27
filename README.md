@@ -1,30 +1,35 @@
-# Session ID - Session Title test
+# XP262 - How to Build Business Extensions and Implement Use Cases on SAP BTP
 
 ## Description
 
-This repository contains the material for the SAP TechEd 2022 session called Session ID - Session Title.  
+This repository contains the material for the SAP TechEd 2022 session called XP262 - How to Build Business Extensions and Implement Use Cases on SAP BTP.  
 
 ## Overview
 
-This session introduces attendees to...
+This session introduces attendees into the general concepts of building extensions for SAP systems (like SAP S/4HANA, SAP SuccessFactors and alike) with the help of SAP Business Technology Platform (SAP BTP). Instead of building our own extension app, we will take a different approach in this advanced session: Understanding an already existing and running app, diving into the most important aspects of such an app and setting the foundation for more complex scenarios. 
 
 ## Requirements
 
-The requirements to follow the exercises in this repository are...
+There are no requirements for this session other than a browser (preferrably Google Chrome). Unfortunately, since the entire environment is already prepared for attendees including the SAP S/4HANA on premise system, this exercises can only be done on-site at SAP TechEd 2022 in Las Vegas. 
+
+## Procedure
+
+If you complete an exercise early, please resist the urge to go on to the next one. Instead, investigate what you've just done and see if you can learn more about the subject that was presented. That way, we can avoid having to answer every question several times and really ensure that all questions can be raised.
+
+**IMPORTANT:** The instructions in the following exercises contain more than just the actual steps you have to do. To not get confused, we have highlighted the steps where you actually have to do something with this pointer: 👉. Everything else is intented to provide more background information
 
 ## Exercises
 
 Provide the exercise content here directly in README.md using [markdown](https://guides.github.com/features/mastering-markdown/) and linking to the specific exercise pages, below is an example.
 
 - [Getting Started](exercises/ex0/)
-- [Exercise 1 - First Exercise Description](exercises/ex1/)
-    - [Exercise 1.1 - Exercise 1 Sub Exercise 1 Description](exercises/ex1#exercise-11-sub-exercise-1-description)
-    - [Exercise 1.2 - Exercise 1 Sub Exercise 2 Description](exercises/ex1#exercise-12-sub-exercise-2-description)
-- [Exercise 2 - Second Exercise Description](exercises/ex2/)
-    - [Exercise 2.1 - Exercise 2 Sub Exercise 1 Description](exercises/ex2#exercise-21-sub-exercise-1-description)
-    - [Exercise 2.2 - Exercise 2 Sub Exercise 2 Description](exercises/ex2#exercise-22-sub-exercise-2-description)
+- [Exercise 1 - Explore how to use SAP Event Mesh](exercises/ex1/)
+- [Exercise 2 - How does SAP Cloud Connector and SAP Private Link service help?](exercises/ex2)
+- [Exercise 3 - Get in touch with your data using SAP HANA Cloud and the SAP HANA Database Explorer](exercises/ex3/)
+- [Exercise 4 - How does my application behave?](exercises/ex4/)
+    - [Exercise 4.1 - Work with the pre-built Kibana dashboards of application logging](exercises/ex4#exercise-21-sub-exercise-1-description)
+    - [Exercise 4.2 - get pro-active information about your apps by using SAP Alert Notification](exercises/ex4#exercise-21-sub-exercise-1-description)
 
-  
 **OR** Link to the Tutorial Navigator for example...
 
 Start the exercises [here](https://developers.sap.com/tutorials/abap-environment-trial-onboarding.html).
