@@ -24,11 +24,11 @@ Provide the exercise content here directly in README.md using [markdown](https:/
 
 - [Getting Started](exercises/ex0/)
 - [Exercise 1 - Explore how to use SAP Event Mesh](exercises/ex1/)
-- [Exercise 2 - How does SAP Cloud Connector and SAP Private Link service help?](exercises/ex2)
-- [Exercise 3 - Get in touch with your data using SAP HANA Cloud and the SAP HANA Database Explorer](exercises/ex3/)
-- [Exercise 4 - How does my application behave?](exercises/ex4/)
-    - [Exercise 4.1 - Work with the pre-built Kibana dashboards of application logging](exercises/ex4#exercise-21-sub-exercise-1-description)
-    - [Exercise 4.2 - get pro-active information about your apps by using SAP Alert Notification](exercises/ex4#exercise-21-sub-exercise-1-description)
+- [Exercise 2 - Get in touch with your data using SAP HANA Cloud and the SAP HANA Database Explorer](exercises/ex2/)
+- [Exercise 3 - How does my application behave?](exercises/ex4/)
+    - [Exercise 3.1 - Work with the pre-built Kibana dashboards of application logging](exercises/ex4#exercise-21-sub-exercise-1-description)
+    - [Exercise 3.2 - get pro-active information about your apps by using SAP Alert Notification](exercises/ex4#exercise-21-sub-exercise-1-description)
+- [Exercise 4 - How does SAP Cloud Connector and SAP Private Link service help?](exercises/ex4)
 
 **OR** Link to the Tutorial Navigator for example...
 
