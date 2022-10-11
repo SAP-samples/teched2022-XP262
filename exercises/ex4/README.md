@@ -36,7 +36,21 @@ Please take a look at the following [blog](https://blogs.sap.com/2022/07/07/btp-
 
 
 ## Exercise 4.1 SAP Cloud Connector
-    Check the connectivity and application log
+By default, the application in this exercise is configured to connect via Cloud Connector. If you are interested in detailed configuration steps, you can check following [tutorial](https://developers.sap.com/tutorials/btp-app-ext-service-cloud-connector.html).
+1. To make sure that the Cloud Connector is up and running you can open **Cloud Connectors** in the **Connectivity** section of **SAP BTP Cockpit**. 
+   You will find there the exposed Back-End systems with the required Virtual hosts information. The virtual host is a mask to hide the real system hostname, which is configured in Cloud Connector. In this example, the virtual host is: *virtualhosts4:44300* 
+   
+   ![Cloud Connector](./images/cc-1.png)
+   
+   This virtual host is used for defining the so-called Destination which is part of SAP BTP connectivity service. It contains the connection details for the remote communication of an application. In this case SAP S/4HANA system.
+
+2. Now you can navigate to **Desinations** tab in the **Connectivity** section of **SAP BTP Cockpit**. 
+   You will find a destination called **"BusinessPartner"** which contains the details of remote communication. The virtual host from previous step is defined as URL and *OnPremise* proxy type is selected as a connectivity option.
+   You can click on **"Check Connection"** to make sure that the communication to the S/4HANA system is working properly.
+   
+   ![Cloud Connector](./images/cc-2.png)
+
+3. Run the application and check the connection details in Application Log
 
 ## Exercise 4.2 SAP Private Link service
     Check the connectivity and application log
