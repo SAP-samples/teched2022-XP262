@@ -16,12 +16,17 @@ SAP Event Mesh is a fully managed service on SAP BTP and offers a management das
 
 👉 Go back to your SAP BTP subaccount overview (you should have bookmarked this page in the previous exercise).
 👉 Navigate to **Instances and Subscriptions** and open the SAP Event Mesh management dashboard via the link next to the Subscription name. 
-![Open SAP Event Mesh subscription](images/open_eventmesh.png)
+![Open SAP Event Mesh subscription](./images/open_eventmesh.png)
 
 ## Exercise 1.2 Check out the queues in the SAP Event Mesh management dashboard
 
-The SAP TechEd instructors have already deployed
+1. Each student's CAP applications have already been deployed by SAP TechEd instructors. CAP checks whether queues are required during application startup and, if so, whether they have already been created and connected to the application. In the service definition, for example, the CDS declarations state that a subscription to the topic *tfe/bpem/em/ce/sap/s4/beh/businesspartner/v1/BusinessPartner/Changed/v1* is required. If the Queue has not yet been created, CAP creates it with a combination  the application_id (that you noted down in the previous exercise) in its name.
 
+👉 Navigate to **Queues** and filter for your application_id. 
+
+There should only be one queue listed now. This queue is linked to your CAP application and receives events from SAP S/4HANA - regardless of whether the other applications have processed those events or not, because all other applications have their own queue and only consume events from their own queue.
+
+2. 
 👉 Leave this browser window or tab open, so you can observe in parallel how SAP Event Mesh behaves on certain actions you execute. 
 
 Exercise 

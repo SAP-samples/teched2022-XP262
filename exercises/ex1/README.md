@@ -42,12 +42,12 @@ The connecting piece between SAP S/4HANA (via SAP Cloud Connector and SAP Event 
 
 2. You will get a list of deployed applications (either started or stopped) in this particular Cloud Foundry space. Those are: 
 
-   - BPVerification-db-STUDENT-deployer: An application that has been started once to deploy database artefacts to an HDI Container on SAP HANA Cloud.
-   - BPVerification-srv-STUDENT: The CAP backend application. 
+   - BPVerification-db-\<STUDENT>-deployer: An application that has been started once to deploy database artefacts to an HDI Container on SAP HANA Cloud.
+   - BPVerification-srv-\<STUDENT>: The CAP backend application. 
 
     ![Overview of deployed Cloud Foundry apps](./images/list-of-cf-apps.png) 
 
-    👉 Search for the BPVerification-srv-STUDENT app **that fits to your student number** and click on it to open the details. 
+    👉 Search for the BPVerification-srv-\<STUDENT> app **that fits to your student number** and click on it to open the details. 
     ![find our particular CF app](./images/your_backendapp.png) 
     ![Overview of your particular CF app](./images/backendapp_overview.png) 
 
@@ -65,7 +65,7 @@ The connecting piece between SAP S/4HANA (via SAP Cloud Connector and SAP Event 
     Short explanation: 
     - **BPVerification-dest**: service instance (SAP Destination service) to resolve destination names into the technical details (*shared with all other participants*)
     - **BPVerification-cs**: service instance (SAP Connectivity Service), additionally to the SAP Destination service, to reach endpoints connected via SAP Cloud Connector (*shared with all other participants*)
-    - **BPVerification-db1**: service instance (HDI Container&Schemas) to access your particular HDI Container on SAP HANA Cloud. (*not shared with all other particpants, student specific*)
+    - **BPVerification-db\<STUDENT>**: service instance (HDI Container&Schemas) to access your particular HDI Container on SAP HANA Cloud. (*not shared with all other particpants, student specific*)
     - **BPVerification-em**: service instance (SAP Event Mesh) to access SAP Event Mesh topics fed by SAP S/4HANA. (*shared with all other participants, each participant will automatically get an own queue -> next exercise*)
     - **BPVerification-uaa**: service instance (SAP Authorization and Trust Management service) to secure applications. (*shared with all other participants*)
     - **BPVerification-logging**: service instance (SAP Application Logging service for SAP BTP) to enable logging&monitoring with the help of the ELK stack. (*shared with all other participants*)
@@ -88,12 +88,12 @@ The connecting piece between SAP S/4HANA (via SAP Cloud Connector and SAP Event 
 
 7. 👉 To see how the frontend is connected with the backend, let's go bock to the **SAP BTP subaccount overview**. 
 
-8. 👉 Go to **Instances && subscriptions**. Select the service instance **BPVerification-destination-service-STUDENT**. A new tab will open with the details of this service instance. 
+8. 👉 Go to **Instances && subscriptions**. Select the service instance **BPVerification-destination-service-\<STUDENT>**. A new tab will open with the details of this service instance. 
    
     This service instance is bound to the HTML5 Application repository instance for each frontend application and is used to provide URL endpoints.
     ![Destination Service instance for HTML5 app repo](./images/destservice_instance.png) 
 
-9.  👉 Navigate to **Destinations** and select the Destination **BPVerification-srv-api-STUDENT**. 
+9.  👉 Navigate to **Destinations** and select the Destination **BPVerification-srv-api-\<STUDENT>**. 
 
     - The URL is the URL of the CAP application that you have seen and accessed earlier in this exercise (where all the endpoints were secured and not accessible)
     - Authentication **NoAuthentication** would still mean that the application endpoints of the CAP application cannot be accessed. Since the SAP Fiori application is secured by the [Authorization and Trust Management Service (also known as xsuaa)](https://github.com/SAP-samples/btp-build-resilient-apps/blob/extension/app/businesspartners/xs-app.json) with the help of [a NPM package called approuter](https://www.npmjs.com/package/@sap/approuter), the Destination property **HTML5.ForwardAuthToken** will forward the acquired token to the backend. 
