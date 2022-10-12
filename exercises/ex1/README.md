@@ -80,7 +80,7 @@ The connecting piece between SAP S/4HANA (via SAP Cloud Connector and SAP Event 
 
     ![application_id of system provided environment variables](./images/applicationid_env.png) 
 
-6. As a last step, let's stop the application so that we can follow along how the application processes event via SAP Event Mesh slowly. 
+6. As a last step, let's stop the application so that we can follow along how the application processes events via SAP Event Mesh slowly. 
 
     👉 Navigate to the **Overview** section of the application and **stop** the application. 
 
