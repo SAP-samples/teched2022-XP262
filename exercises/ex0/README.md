@@ -18,7 +18,7 @@ The _source system_ so to speak for our extension application is an SAP S/4HANA 
 
 * Client: 100
 * User: S4H_0XX (**IMPORTANT:** XX is the UserID on your desk. In case 01 is your UserID, please use S4H_001 as the user for the SAP S/4HANA sytem.)
-* Password: Welcome1
+* Password: LasVegas22!
 
 4. Enter **bp** as the transaction code and hit **Enter** to open the transaction. Alternatively you can also you use double-click the entry in your user menu. 
 
@@ -43,7 +43,11 @@ Enter your SAP BTP account credentials:
 
 ![SAP BTP Logon screen](./images/btp_logon.png)
 
-2. Let's have a look at a few menu items to proof that you have all the required RoleCollections. 
+2. This page will be needed throughout this whole session and we'll further on reference this page as **SAP BTP subaccount overview**. 
+
+    👉 Bookmark this page as in your browser so you can easily come back later on.
+
+3. Let's have a look at a few menu items to proof that you have all the required RoleCollections. 
 
 👉 Go to **Services > Instances & Subscriptions**. You should see a list with service instances and subscriptions that your SAP TechEd instructors have been created before. If you have issues seing this list, please reach out to one of the instructors. 
 
@@ -53,7 +57,7 @@ You should now be able to see the list of already created service instances and 
 
 ![BTP instances & subscriptions menu item](./images/instances_subs_overview.png)
 
-3. Go back to the **Overview** menu where you'll find lots of information about the subaccount itself. Among other things, there is a list of Cloud Foundry spaces inside, you should see a **dev** space there. 
+4. Go back to the **Overview** menu where you'll find lots of information about the subaccount itself. Among other things, there is a list of Cloud Foundry spaces inside, you should see a **dev** space there. 
 
 ![Go to Cloud Foundry space by clicking on the dev space name](./images/go_to_cfspace.png)
 
