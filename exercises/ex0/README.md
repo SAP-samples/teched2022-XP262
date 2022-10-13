@@ -17,14 +17,14 @@ The _source system_ so to speak for our extension application is an SAP S/4HANA 
 3. Enter the following credentials: 
 
 * Client: 100
-* User: S4H_0XX (**IMPORTANT:** XX is the UserID on your desk. In case 01 is your UserID, please use S4H_001 as the user for the SAP S/4HANA sytem.)
+* User: S4H_0\<STUDENT> (**IMPORTANT:** \<STUDENT> is the student number on your desk. In case you have received *01*, please use S4H_001 as the user for the SAP S/4HANA sytem.)
 * Password: LasVegas22!
 
-4. Enter **bp** as the transaction code and hit **Enter** to open the transaction. Alternatively you can also you use double-click the entry in your user menu. 
+1. Enter **bp** as the transaction code and hit **Enter** to open the transaction. Alternatively you can also double-click the entry in your user menu. 
 
 ![How to enter the Business Partner transaction](./images/bp_transaction_code.png)
 
-You should see the transaction to maintain business partners: 
+You will see the transaction to maintain business partners: 
 
 ![Business Partner maintenance transaction](./images/maintain_bp.png)
 
