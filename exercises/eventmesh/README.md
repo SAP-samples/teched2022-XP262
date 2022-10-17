@@ -121,14 +121,67 @@ In short:
 
 Now that you have seen what data the CAP application will actually receive once it consumes a message, let's give the CAP application a nudge to actually do its work. The messages in the queues are waiting. 
 
+1. Let's start your application in the SAP BTP Cockpit. 
+    👉 Go to the SAP BTP subaccount overview and navigate to your space to get to the application overview. 
+
+    ![Navigate to the Cloud Foundry space dev](./images/open_space.png)
+
+    👉 Start **YOUR** application using the action icon. 
+
+    ![Click the action item to start the application](./images/start_application.png)
+
+    👉 Wait a few seconds (or come back after your have done the next step) **YOUR** to check if the application was succesfully started.
+
+2. Check the SAP Fiori frontend and check if your new business partner (and business partners of other students) has been processed and is listed in the application.
+   
+    👉 Go to the SAP BTP subaccount overview and open the corresponding application (techedbusinessparters\<STUDENT>) in the HTML5 Application Repository. 
+    ![Navigate to the HTML5 apps menu](./images/html5apps_menu.png)
+
+    👉 Open the app, filter for the business partner (for instance, last name = \<STUDENT>) and select the corresponding entry to get to the details page. 
+    ![Filter for Last Name](./images/bp_filter.png)
+
+3. You should now create again a business partner in the SAP S/4HANA system to see that this business partner will immediately appear in the SAP Fiori application (after a refresh). 
+   
+    👉 Go back to the SAP GUI and create another business partner (don't forget to provide your student number as Last Name and also enter the address information). **Save** the business partner to fire the event for SAP Event Mesh. 
+    ![Create the new business partner](./images/bp2_creation.png)
+
+    👉 Close the Transaction in the SAP GUI. Otherwise you would exclusively lock this busines partner for further changes (that you are going to made in the next steps).
+
+    👉 Refresh the SAP Fiori application on SAP BTP to see the recently created business partner.
+    ![Filter for Last Name and refresh](./images/bp_filter2.png)
+
+
+4. Let's now change the address of one of your business partners in the SAP Fiori application and/or block the business partner.
+    👉 Select a business partner to navigate to the details page. Go into the **Edit** mode and change the address to whatever you want, set the business partner to **Verified** and hit **Save** (lower right edge of the page).
+
+    Here's the corresponding coding: [GitHub](https://github.com/SAP-samples/btp-build-resilient-apps/blob/extension/srv/catalog.js#L50-L69)
+
+    ![Update the recently created business partner](./images/update_bp2.png)
+
+    👉 Try to also block the business partner in SAP S/4HANA.
+    [Update the recently created business partner](./images/update_bp2.png)
+
+    Here's the corresponding coding: [GitHub](https://github.com/SAP-samples/btp-build-resilient-apps/blob/extension/srv/catalog.js#L75-L89)
+
+    The changes will now be sent to the SAP S/4HANA system using your Destination (of type SAP Cloud Connector so far). The field **Verification Status** is not available in the SAP S/4HANA system and only important for our application. That's why it's only persisted in the tables of our application in the HDI Container on SAP HANA Cloud.
+    
+    Here's the corresponding coding: [GitHub](https://github.com/SAP-samples/btp-build-resilient-apps/blob/extension/srv/catalog.js#L50-L69)
+
+5. Go back to the SAP S/4HANA system and check if your changes were succesful. 
+   👉 Open the known transaction for business partners (Transaction Code **BP** or the entry in your user menu), enter the Business Partner ID, select **Start** and double-click on the resulting entry to open the business partner details.
+   ![Search updated business partner in ](./images/sapgui_search_bp.png)
+
+   👉 Compare the address that you have entered in the extension application with the displayed results in the SAP S/4HANA system.
+
+   👉 Go to the **Status** tab and see if blocking the business partner was also succesful. 
+
+   (If it hasn't been updated: don't blame SAP's products and tools, your instructors just aren't the best coders 😉 - feel free to submit a bug fix via a Pull Request)
 
 
 You might have probably seen the benefits of decoupling the SAP S/4HANA system and the CAP application here.
 
-**Resiliency**: The CAP application was done, the SAP S/4HANA system wasn't aware and doesn't have to be aware of it. Still, the processing can continue once the application is back online. 
+**Resiliency**: The CAP application was down (the application was stopped by your instructors for demonstration purposes), the SAP S/4HANA system wasn't aware and doesn't have to be aware of it. Still, the processing can continue once the application is back online. 
 **Scalability**: The SAP S/4HANA system doesn't have any idea how many consumers (CAP application of consumers in this case) are connected and doesn't have to be aware of how many consumers are connected.
-
-## Exercise 1.5 Check the SAP Fiori application to find your business partner
 
 ## Summary
 
