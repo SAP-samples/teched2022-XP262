@@ -35,9 +35,10 @@ For more details about supported hyperscalers and services please see the SAP Pr
 Please take a look at the following [blog](https://blogs.sap.com/2022/07/07/btp-private-linky-swear-with-azure-running-cloud-connector-and-sap-private-link-side-by-side/) post if you are interested in comparing the two approaches.
 
 
-## Exercise 4.1 SAP Cloud Connector
+## Exercise 4.1 Connectivity with SAP Cloud Connector
 By default, the application in this exercise is configured to connect via Cloud Connector. If you are interested in detailed configuration steps, you can check following [tutorial](https://developers.sap.com/tutorials/btp-app-ext-service-cloud-connector.html).
 1. To make sure that the Cloud Connector is up and running you can open **Cloud Connectors** in the **Connectivity** section of **SAP BTP Cockpit**. 
+   
    You will find there the exposed Back-End systems with the required Virtual hosts information. The virtual host is a mask to hide the real system hostname, which is configured in Cloud Connector. In this example, the virtual host is: *virtualhosts4:44300* 
    
    ![Cloud Connector](./images/cc-1.png)
@@ -45,15 +46,52 @@ By default, the application in this exercise is configured to connect via Cloud 
    This virtual host is used for defining the so-called Destination which is part of SAP BTP connectivity service. It contains the connection details for the remote communication of an application. In this case SAP S/4HANA system.
 
 2. Now you can navigate to **Desinations** tab in the **Connectivity** section of **SAP BTP Cockpit**. 
-   You will find a destination called **"BusinessPartner"** which contains the details of remote communication. The virtual host from previous step is defined as URL and *OnPremise* proxy type is selected as a connectivity option.
+   
+   You will find a destination called **"BusinessPartner-\<STUDENT>"** which contains the details of remote communication. The virtual host from the previous step is defined as a URL and _OnPremise_ proxy type is selected as a connectivity option.
    You can click on **"Check Connection"** to make sure that the communication to the S/4HANA system is working properly.
    
    ![Cloud Connector](./images/cc-2.png)
 
-3. Run the application and check the connection details in Application Log
+3. Run the application and check the connection details in Application Log.
+   
+   Go to **"HTML5 Applications"** and open the application with your student number. e.g. **techedbusinesspartners\<STUDENT>**
 
-## Exercise 4.2 SAP Private Link service
+   ![HTML5 App](./images/cc-3.png)
+
+   To trigger an API call, select one of the business partners from the list and **block** or **unblock** it.
+
+   ![Block/Unblock](./images/cc-4.png)
+
+   Now you can go to the Application Logging dashboard to check the connectivity type.
+
+   Application Logging Dashboard you can either via this [link](https://logs.cf.us20.hana.ondemand.com/app/dashboards#/view/Overview?_g=(filters:!(),refreshInterval:(pause:!t,value:0),time:(from:now-15m,to:now))&_a=(description:'(default)%20%20Overview%20and%20some%20basic%20KPIs%20regarding%20failures,%20log%20counts,%20etc.',filters:!(),fullScreenMode:!f,options:(darkTheme:!f,useMargins:!f),query:(language:kuery,query:''),timeRestore:!f,title:Overview,viewMode:view)) or by navigating to the application instance of Cloud Foundry space.
+
+   Open the Space and search for the application with your student number **"BPVerification-srv-\<STUDENT>"** and open it.
+
+    ![CF Space](./images/cc-5.png)
+    ![Search app](./images/cc-6.png)
+
+    Over there you can fine the link to open the **Kibana Dashboard**
+
+    ![Kibana](./images/cc-7.png)
+
+    Once you opened the application logging dashboard, open the **Requests and Logs** tab and set following filters to find the right log entry.
+
+   | Field          | Operator | Value                           |
+   |----------------|----------|---------------------------------|
+   | component_name | is       | BPVerification-srv- < STUDENT > |
+   | msg            | is       | ProxyType                       |
+
+   ![Kibana](./images/cc-8.png)
+   ![Kibana filter](./images/cc-9.png)
+
+   After setting the filters you will find the latest API call and see that **ProxyType** is **OnPremise**, which means the connectivity happened via Cloud Connector.
+
+   ![Kibana ProxyType](./images/cc-10.png)
+
+## Exercise 4.2 Connectivity with SAP Private Link service
     Check the connectivity and application log
+    
 
 ## Summary
 
