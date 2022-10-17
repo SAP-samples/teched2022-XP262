@@ -20,8 +20,6 @@ If you complete an exercise early, please resist the urge to go on to the next o
 
 ## Exercises
 
-Provide the exercise content here directly in README.md using [markdown](https://guides.github.com/features/mastering-markdown/) and linking to the specific exercise pages, below is an example.
-
 - [Getting Started](exercises/ex0/)
 - [Exercise 1 - Explore SAP Event Mesh in action](exercises/ex1/)
 - [Exercise 2 - Get to know your own extension application artefacts on SAP BTP](exercises/ex2)
