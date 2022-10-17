@@ -23,20 +23,11 @@ If you complete an exercise early, please resist the urge to go on to the next o
 Provide the exercise content here directly in README.md using [markdown](https://guides.github.com/features/mastering-markdown/) and linking to the specific exercise pages, below is an example.
 
 - [Getting Started](exercises/ex0/)
-- [Exercise 1 - Explore how to use SAP Event Mesh](exercises/ex1/)
-- [Exercise 2 - How does SAP Cloud Connector and SAP Private Link service help?](exercises/ex2)
-- [Exercise 3 - Get in touch with your data using SAP HANA Cloud and the SAP HANA Database Explorer](exercises/ex3/)
-- [Exercise 4 - How does my application behave?](exercises/ex4/)
-    - [Exercise 4.1 - Work with the pre-built Kibana dashboards of application logging](exercises/ex4#exercise-21-sub-exercise-1-description)
-    - [Exercise 4.2 - get pro-active information about your apps by using SAP Alert Notification](exercises/ex4#exercise-21-sub-exercise-1-description)
-
-**OR** Link to the Tutorial Navigator for example...
-
-Start the exercises [here](https://developers.sap.com/tutorials/abap-environment-trial-onboarding.html).
-
-**IMPORTANT**
-
-Your repo must contain the .reuse and LICENSES folder and the License section below. DO NOT REMOVE the section or folders/files. Also, remove all unused template assets(images, folders, etc) from the exercises folder. 
+- [Exercise 1 - Explore SAP Event Mesh in action](exercises/ex1/)
+- [Exercise 2 - Get to know your own extension application artefacts on SAP BTP](exercises/ex2)
+- [Exercise 3 - Logging and Monitoring capabilities of SAP BTP with Application Logging service and Kibana Dashboards](exercises/ex3/)
+- [Exercise 4 - Get in touch with the data persistency: SAP HANA Cloud](exercises/ex4/)
+- [Exercise 5 - Haruts Exercise :-)](exercises/ex5/)
 
 ## How to obtain support
 
