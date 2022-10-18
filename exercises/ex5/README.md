@@ -1,4 +1,4 @@
-# Exercise 4 - Discover the connecting options of SAP BTP by utilizing SAP Cloud Connector and the SAP Private Link service
+# Exercise 5 - Discover the connecting options of SAP BTP by utilizing SAP Cloud Connector and SAP Private Link service
 
 After seeing how the application behaves on different state changes or when something goes wrong, we can now have a closer look at the connectivity topic, to learn two different approaches to establish a connection between SAP BTP and SAP S/4HANA on-premise system.
 
@@ -35,7 +35,7 @@ For more details about supported hyperscalers and services please see the SAP Pr
 Please take a look at the following [blog](https://blogs.sap.com/2022/07/07/btp-private-linky-swear-with-azure-running-cloud-connector-and-sap-private-link-side-by-side/) post if you are interested in comparing the two approaches.
 
 
-## Exercise 4.1 Connectivity with SAP Cloud Connector
+## Exercise 5.1 Connectivity with SAP Cloud Connector
 By default, the application in this exercise is configured to connect via Cloud Connector. If you are interested in detailed configuration steps, you can check following [tutorial](https://developers.sap.com/tutorials/btp-app-ext-service-cloud-connector.html).
 1. To make sure that the Cloud Connector is up and running you can open **Cloud Connectors** in the **Connectivity** section of **SAP BTP Cockpit**. 
    
@@ -89,7 +89,7 @@ By default, the application in this exercise is configured to connect via Cloud 
 
    ![Kibana ProxyType](./images/cc-10.png)
 
-## Exercise 4.2 Connectivity with SAP Private Link service
+## Exercise 5.2 Connectivity with SAP Private Link service
 
 In this exercise, we are going to change the connectivity option and set up our destination to connect via the SAP Private Link service.
 
