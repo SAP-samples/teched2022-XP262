@@ -14,7 +14,7 @@ The Cloud Connector acts as a link between on-premise systems and SAP BTP applic
 
 The Cloud Connector should be installed on a customer's on-premise network. It supports HTTP as well as additional protocols like RFC.  
 
-![Cloud Connector](./images/cc.png)
+![Cloud Connector](./images/cc.png) 
 
 For more details please see the Cloud Connector [documentation](https://help.sap.com/docs/CP_CONNECTIVITY/cca91383641e40ffbe03bdc78f00f681/e6c7616abb5710148cfcf3e75d96d596.html?locale=en-US) 
 
@@ -141,6 +141,39 @@ If you're curious about the steps involved in setting up a Private Link connecti
    > Note: If TrustAll is set to TRUE in the destination, the server certificate will not be checked for SSL connections. It is intended for test scenarios only, and should not be used in production (the server certificate will not be checked and you will not notice MITM attacks).
 
    If you're interested in learning more about how to set up end-to-end SSL, you can check the details in the following [repository](https://github.com/SAP-samples/btp-build-resilient-apps/blob/extension-privatelink/tutorials/05-PrivateLink/README.md#setup-end-to-end-ssl).
+
+7. Restart the application to avoid destination caching issues. 
+   Open the Space and search for the application with your student number **"BPVerification-srv-\<STUDENT>"**  and restart it.
+
+    ![CF Space](./images/cc-5.png)
+    ![Search app](./images/cc-6.png)
+    ![Restart](./images/plink-7.png)
+
+8. Run the application and check the connection details in Application Log.
+   
+   Go to **"HTML5 Applications"** and open the application with your student number. e.g. **techedbusinesspartners\<STUDENT>**
+
+   ![HTML5 App](./images/cc-3.png)
+
+   To trigger an API call, select one of the business partners from the list and **block** or **unblock** it.
+
+   ![Block/Unblock](./images/cc-4.png)
+
+   Now you can go to the [Application Logging dashboard](https://logs.cf.us20.hana.ondemand.com/app/dashboards#/view/Overview?_g=(filters:!(),refreshInterval:(pause:!t,value:0),time:(from:now-15m,to:now))&_a=(description:'(default)%20%20Overview%20and%20some%20basic%20KPIs%20regarding%20failures,%20log%20counts,%20etc.',filters:!(),fullScreenMode:!f,options:(darkTheme:!f,useMargins:!f),query:(language:kuery,query:''),timeRestore:!f,title:Overview,viewMode:view)) to check the connectivity type.
+
+9. Once you opened the application logging dashboard, open the **Requests and Logs** tab and set following filters to find the right log entry.
+
+   | Field          | Operator | Value                           |
+   |----------------|----------|---------------------------------|
+   | component_name | is       | BPVerification-srv- < STUDENT > |
+   | msg            | is       | ProxyType                       |
+
+   ![Kibana](./images/cc-8.png)
+   ![Kibana filter](./images/cc-9.png)
+
+   After setting the filters you will find the latest API call and see that **ProxyType** is **PrivateLink** instead of **OnPremise**.
+
+   ![Kibana ProxyType PrivateLink](./images/plink-8.png)
 
 ## Summary
 Well done; you now have a solid understanding of the various connecting options offered by the SAP Business Technology Platform.
