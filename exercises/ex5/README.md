@@ -79,6 +79,12 @@ By default, the application in this exercise is configured to connect via Cloud 
 
     ![Kibana](./images/cc-7.png)
 
+   👉 In case you will be asked for authentication, enter the following origin key (***tdcteched1-platform***) from the identity provider and sign in with alternative identity provider 
+
+    ***Origin Key: tdcteched1-platform***
+
+    ![Kibana sign in](./images/cc-11.png)
+
    👉 Once you opened the application logging dashboard, open the **Requests and Logs** tab and set following filters to find the right log entry.
 
    | Field          | Operator | Value                           |
@@ -168,6 +174,12 @@ If you're curious about the steps involved in setting up a Private Link connecti
    ![Load BPs](./images/cc-4.png)
 
    Now you can go to the [Application Logging dashboard](https://logs.cf.us20.hana.ondemand.com/app/dashboards#/view/Overview?_g=(filters:!(),refreshInterval:(pause:!t,value:0),time:(from:now-15m,to:now))&_a=(description:'(default)%20%20Overview%20and%20some%20basic%20KPIs%20regarding%20failures,%20log%20counts,%20etc.',filters:!(),fullScreenMode:!f,options:(darkTheme:!f,useMargins:!f),query:(language:kuery,query:''),timeRestore:!f,title:Overview,viewMode:view)) to check the connectivity type.
+
+   👉 In case you will be asked for authentication, enter the following origin key (***tdcteched1-platform***) from the identity provider and sign in with alternative identity provider 
+
+    ***Origin Key: tdcteched1-platform***
+
+    ![Kibana sign in](./images/cc-11.png)
 
 9. 👉 Once the application logging dashboard has been accessed, open the **Requests and Logs** tab and set the following filters to find the right log entry.
 
