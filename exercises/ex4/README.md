@@ -1,10 +1,10 @@
-# Exercise 3 - Get in touch with your data using SAP HANA Cloud and the SAP HANA Database Explorer
+# Exercise 4 - Get in touch with your data using SAP HANA Cloud and the SAP HANA Database Explorer
 
 Now that you've seen how the extension application is notified about new or changed business partners, and where the data eventually comes from via SAP Cloud Connector (or SAP Private Link service, next exercise), let's look at the extension application's data storage. In some cases, providing the extension application with its own data storage may make sense or even be required. It might make sense if you want to work independently of the SAP S/4HANA system, such as if the SAP S/4HANA system is down and users still need to use the applications. It is required in general if additional content (in our case, the "verification status" field) is to be stored.
 
 Applications developed with the SAP Cloud Application Programming Model benefit from automatically generated database artefacts. These can then be deployed in a so-called HDI container in the SAP HANA Cloud. We will not go into the details of an HDI container here; more information is available at [help.sap.com](https://help.sap.com/docs/SAP_HANA_PLATFORM/3823b0f33420468ba5f1cf7f59bd6bd9/e28abca91a004683845805efc2bf967c.html?version=2.0.04&locale=en-US): 
 
-## Exercise 3.1 What is in my HDI Container on SAP HANA Cloud?
+## Exercise 4.1 What is in my HDI Container on SAP HANA Cloud?
 
 First, you need to understand what's actually going to be deployed to your HDI Container in SAP HANA Cloud. There's two different files we are going to have a look at: 
 
@@ -17,7 +17,7 @@ Some of the tables (like StatusValues) receive static values from CSV files, the
 
 Since the CAP application is already deployed, you should most likely see those artefacts in SAP HANA Cloud already. That's what you'll do in the next steps. 
 
-## Exercise 3.2 Open the SAP HANA Database Explorer
+## Exercise 4.2 Open the SAP HANA Database Explorer
 
 There's different administration tools for SAP HANA Cloud. May it be [Database Explorer feature in SAP Business Application Studio](https://blogs.sap.com/2020/12/23/sap-hana-cloud-and-sap-business-application-studio/) (that we could used as well in this session but we wanted to keep the amount of tools as low as possible) or the OpenSource [SAP HANA Developer CLI (sample coding)](https://github.com/SAP-samples/hana-developer-cli-tool-example). We'll use one of the SAP HANA Cloud capabilities called **SAP HANA Database Explorer** that you can directly access via SAP BTP Cockpit. 
 
@@ -39,7 +39,7 @@ There's different administration tools for SAP HANA Cloud. May it be [Database E
 
     The SAP HANA Database Explorer will now connect to the HDI Container. Are you wondering why your personal user has access to this particular HDI Container? The SAP HANA Database Exploerer implicitly creates a so-called service key and uses its credentials to connect. If you are in your **dev** space and look for the HDI Container, you will see the automatically generated service key in the details view of your BPVerification-db-\<STUDENT> instance. 
 
-## Exercise 3.3 Find the tables of the extension application
+## Exercise 4.3 Find the tables of the extension application
 
 There's a not a lot of content available in your HDI Container, basically just some Views and Tables. But that's all we need right now. 
 
