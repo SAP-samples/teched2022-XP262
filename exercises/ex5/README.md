@@ -1,4 +1,4 @@
-# Exercise 4 - Discover the connecting options of SAP BTP by utilizing SAP Cloud Connector and the SAP Private Link service
+# Exercise 5 - Discover the connectivity options of SAP BTP by utilizing SAP Cloud Connector and SAP Private Link service
 
 After seeing how the application behaves on different state changes or when something goes wrong, we can now have a closer look at the connectivity topic, to learn two different approaches to establish a connection between SAP BTP and SAP S/4HANA on-premise system.
 
@@ -35,7 +35,7 @@ For more details about supported hyperscalers and services please see the SAP Pr
 Please take a look at the following [blog](https://blogs.sap.com/2022/07/07/btp-private-linky-swear-with-azure-running-cloud-connector-and-sap-private-link-side-by-side/) post if you are interested in comparing the two approaches.
 
 
-## Exercise 4.1 Connectivity with SAP Cloud Connector
+## Exercise 5.1 Connectivity with SAP Cloud Connector
 By default, the application in this exercise is configured to connect via Cloud Connector. If you are interested in detailed configuration steps, you can check following [tutorial](https://developers.sap.com/tutorials/btp-app-ext-service-cloud-connector.html).
 1. To make sure that the Cloud Connector is up and running you can open **Cloud Connectors** in the **Connectivity** section of **SAP BTP Cockpit**. 
    
@@ -50,7 +50,7 @@ By default, the application in this exercise is configured to connect via Cloud 
    You will find a destination called **"BusinessPartner-\<STUDENT>"** which contains the details of remote communication. The virtual host from the previous step is defined as a URL and _OnPremise_ proxy type is selected as a connectivity option.
    You can click on **"Check Connection"** to make sure that the communication to the S/4HANA system is working properly.
    
-   ![Cloud Connector](./images/cc-2.png)
+   ![Destination](./images/cc-2.png)
 
 3. Run the application and check the connection details in Application Log.
    
@@ -89,33 +89,58 @@ By default, the application in this exercise is configured to connect via Cloud 
 
    ![Kibana ProxyType](./images/cc-10.png)
 
-## Exercise 4.2 Connectivity with SAP Private Link service
+## Exercise 5.2 Connectivity with SAP Private Link service
 
-In this exercise, we are going to change the connectivity option and set up our destination to connect via the SAP Private Link service.
+In this example, we are going to use the SAP Private Link service to communicate with an SAP S/4HANA system running on Microsoft Azure.
+This connection can be established by creating an Azure Private Link service that exposes a load balancer that routes traffic to the SAP S/4HANA system. This Azure Private Link service must then be used as the resource to which the SAP Private Link service connects. As soon as the connection is established successfully, the SAP Private Link service provides private DNS hostnames pointing to the Azure Private Link service.
 
-1. Open the SAP Private Link service isnstance
+Having SAP Private Link service in place will not require any more to expose the systems and communication through the internet and the whole traffic is secured by an internal hyperscaler network without any exposure.
 
-TODO: Mention AZure
+![Azure Private Link](./images/plink-1.png)
 
+In this exercise, we'll switch the connectivity setting and configure the SAP Private Link service as the connection method for our destination.
 
-After successful creation, you can select the created instance and view created credentials. You can find there the generated set of private DNS hostnames which will be used in upcoming steps for the private communication. 
+If you're curious about the steps involved in setting up a Private Link connection between SAP BTP and Microsoft Azure, you can look at the following [GitHub repository](https://github.com/SAP-samples/btp-build-resilient-apps/blob/extension-privatelink/tutorials/05-PrivateLink/README.md).
 
-![PrivateLink hostname](images/btp-7.png)
+1. Open the **"Instances and Subscriptions** section of your SAP BTP cockpit and search for **"Private Link Service"**.
 
- >   Although Private Link Service is a private tunnel, it is common to use Transport Layer Security (TLS) for security between applications. Private DNS hostname will allow issuing certificates based on an actual hostname for the connected resource and enables TLS connections with verified hostnames.
+   We already created a service instance for Private Link service. The configuration details you can find [here](https://github.com/SAP-samples/btp-build-resilient-apps/blob/extension-privatelink/tutorials/05-PrivateLink/README.md#set-up-sap-private-link-service-on-sap-btp)
 
+   ![SAP Private Link service instance](./images/plink-2.png)
 
-There are a couple of steps required to enable the Private Link connection in the CAP Application. 
+2. You can select it and click on **"View Credentials"**. 
 
- * Open your SAP BTP Account and navigate to your Subaccount
- * Choose Connectivity in the menu on the left then choose Destinations
- * Modify the existing "BusinessPartner" or create a new destination and enter the following information into the Destination Configuration:
+   ![SAP Private Link service instance](./images/plink-3.png)
 
- Instead of using Proxy Type On-Premise for Cloud Connector connectivity, SAP introduced a new Proxy Type  **PrivateLink**. Choose that proxy type and enter the Private Link hostname from the previous step. 
+3. You can find there the generated set of private DNS hostnames which will be used in upcoming steps for the private communication. 
 
- Finally, add **TrustAll=true** in Additional Properties **(We will change this property in later steps)**.
+   ![PrivateLink hostname](./images/plink-4.png)
 
- > Note: If TrustAll is set to TRUE in the destination, the server certificate will not be checked for SSL connections. It is intended for test scenarios only, and should not be used in production (the server certificate will not be checked and you will not notice MITM attacks).  
+   These entries can be used to set up the **Desination** and also to issue TLS certificates so that connected systems can identify themselves.
+
+   * *hostname* - the subdomain consists of service instance id and resource hash and is more stable for creating wildcard certificates. This will allow using the same certificate for multiple private link connections to the same Azure Private Link Service.
+   * *additionalHostname* - is shorter due to the domain name length limitation of some certificate providers and can be used for those cases, but keep in mind that for every new instance that you create it may change.
+
+   > Although Private Link Service is a private tunnel, it is common to use Transport Layer Security (TLS) for security between applications. Private DNS hostname will allow issuing certificates based on an actual hostname for the connected resource and enables TLS connections with verified hostnames.
+
+4. Copy the **hostname** to your clipboard
+
+5. Now, find the destination with your student id e.g. **BusinessPartner-\<STUDENT>** and open "Edit mode"
+
+   ![Destination](./images/plink-5.png)
+
+6. Make the following changes in your destination
+   
+   * Past the copied "hostname" from SAP Private Link service instance as a new URL
+   * Change **ProxyType** to **"PrivateLink"**
+   * Add **"TrustALL=true"** as an Additional Property
+   * Re-enter the password, provided by the instructor
+  
+   ![Destination](./images/plink-6.png)
+
+   > Note: If TrustAll is set to TRUE in the destination, the server certificate will not be checked for SSL connections. It is intended for test scenarios only, and should not be used in production (the server certificate will not be checked and you will not notice MITM attacks).
+
+   If you're interested in learning more about how to set up end-to-end SSL, you can check the details in the following [repository](https://github.com/SAP-samples/btp-build-resilient-apps/blob/extension-privatelink/tutorials/05-PrivateLink/README.md#setup-end-to-end-ssl).
 
 ## Summary
 Well done; you now have a solid understanding of the various connecting options offered by the SAP Business Technology Platform.
