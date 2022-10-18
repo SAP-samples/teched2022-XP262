@@ -37,7 +37,7 @@ Please take a look at the following [blog](https://blogs.sap.com/2022/07/07/btp-
 
 ## Exercise 5.1 Connectivity with SAP Cloud Connector
 By default, the application in this exercise is configured to connect via Cloud Connector. If you are interested in detailed configuration steps, you can check following [tutorial](https://developers.sap.com/tutorials/btp-app-ext-service-cloud-connector.html).
-1. To make sure that the Cloud Connector is up and running you can open **Cloud Connectors** in the **Connectivity** section of **SAP BTP Cockpit**. 
+1. 👉 To make sure that the Cloud Connector is up and running you can open **Cloud Connectors** in the **Connectivity** section of **SAP BTP Cockpit**. 
    
    You will find there the exposed Back-End systems with the required Virtual hosts information. The virtual host is a mask to hide the real system hostname, which is configured in Cloud Connector. In this example, the virtual host is: *virtualhosts4:44300* 
    
@@ -45,7 +45,7 @@ By default, the application in this exercise is configured to connect via Cloud 
    
    This virtual host is used for defining the so-called Destination which is part of SAP BTP connectivity service. It contains the connection details for the remote communication of an application. In this case SAP S/4HANA system.
 
-2. Now you can navigate to **Desinations** tab in the **Connectivity** section of **SAP BTP Cockpit**. 
+2. 👉 Now you can navigate to **Desinations** tab in the **Connectivity** section of **SAP BTP Cockpit**. 
    
    You will find a destination called **"BusinessPartner-\<STUDENT>"** which contains the details of remote communication. The virtual host from the previous step is defined as a URL and _OnPremise_ proxy type is selected as a connectivity option.
    You can click on **"Check Connection"** to make sure that the communication to the S/4HANA system is working properly.
@@ -54,19 +54,19 @@ By default, the application in this exercise is configured to connect via Cloud 
 
 3. Run the application and check the connection details in Application Log.
    
-   Go to **"HTML5 Applications"** and open the application with your student number. e.g. **techedbusinesspartners\<STUDENT>**
+   👉 Go to **"HTML5 Applications"** and open the application with your student number. e.g. **techedbusinesspartners\<STUDENT>**
 
    ![HTML5 App](./images/cc-3.png)
 
-   To trigger an API call, select one of the business partners from the list and **block** or **unblock** it.
+   👉 To trigger an API call, select one of the business partners from the list and **block** or **unblock** it.
 
    ![Block/Unblock](./images/cc-4.png)
 
    Now you can go to the Application Logging dashboard to check the connectivity type.
 
-   Application Logging Dashboard you can either via this [link](https://logs.cf.us20.hana.ondemand.com/app/dashboards#/view/Overview?_g=(filters:!(),refreshInterval:(pause:!t,value:0),time:(from:now-15m,to:now))&_a=(description:'(default)%20%20Overview%20and%20some%20basic%20KPIs%20regarding%20failures,%20log%20counts,%20etc.',filters:!(),fullScreenMode:!f,options:(darkTheme:!f,useMargins:!f),query:(language:kuery,query:''),timeRestore:!f,title:Overview,viewMode:view)) or by navigating to the application instance of Cloud Foundry space.
+   👉 Application Logging Dashboard you can either via this [link](https://logs.cf.us20.hana.ondemand.com/app/dashboards#/view/Overview?_g=(filters:!(),refreshInterval:(pause:!t,value:0),time:(from:now-15m,to:now))&_a=(description:'(default)%20%20Overview%20and%20some%20basic%20KPIs%20regarding%20failures,%20log%20counts,%20etc.',filters:!(),fullScreenMode:!f,options:(darkTheme:!f,useMargins:!f),query:(language:kuery,query:''),timeRestore:!f,title:Overview,viewMode:view)) or by navigating to the application instance of Cloud Foundry space.
 
-   Open the Space and search for the application with your student number **"BPVerification-srv-\<STUDENT>"** and open it.
+   👉 Open the Space and search for the application with your student number **"BPVerification-srv-\<STUDENT>"** and open it.
 
     ![CF Space](./images/cc-5.png)
     ![Search app](./images/cc-6.png)
@@ -75,7 +75,7 @@ By default, the application in this exercise is configured to connect via Cloud 
 
     ![Kibana](./images/cc-7.png)
 
-    Once you opened the application logging dashboard, open the **Requests and Logs** tab and set following filters to find the right log entry.
+   👉 Once you opened the application logging dashboard, open the **Requests and Logs** tab and set following filters to find the right log entry.
 
    | Field          | Operator | Value                           |
    |----------------|----------|---------------------------------|
@@ -102,17 +102,17 @@ In this exercise, we'll switch the connectivity setting and configure the SAP Pr
 
 If you're curious about the steps involved in setting up a Private Link connection between SAP BTP and Microsoft Azure, you can look at the following [GitHub repository](https://github.com/SAP-samples/btp-build-resilient-apps/blob/extension-privatelink/tutorials/05-PrivateLink/README.md).
 
-1. Open the **"Instances and Subscriptions** section of your SAP BTP cockpit and search for **"Private Link Service"**.
+1. 👉 Open the **"Instances and Subscriptions** section of your SAP BTP cockpit and search for **"Private Link Service"**.
 
    We already created a service instance for Private Link service. The configuration details you can find [here](https://github.com/SAP-samples/btp-build-resilient-apps/blob/extension-privatelink/tutorials/05-PrivateLink/README.md#set-up-sap-private-link-service-on-sap-btp)
 
    ![SAP Private Link service instance](./images/plink-2.png)
 
-2. You can select it and click on **"View Credentials"**. 
+2. 👉 You can select it and click on **"View Credentials"**. 
 
    ![SAP Private Link service instance](./images/plink-3.png)
 
-3. You can find there the generated set of private DNS hostnames which will be used in upcoming steps for the private communication. 
+3. 👉 You can find there the generated set of private DNS hostnames which will be used in upcoming steps for the private communication. 
 
    ![PrivateLink hostname](./images/plink-4.png)
 
@@ -123,13 +123,13 @@ If you're curious about the steps involved in setting up a Private Link connecti
 
    > Although Private Link Service is a private tunnel, it is common to use Transport Layer Security (TLS) for security between applications. Private DNS hostname will allow issuing certificates based on an actual hostname for the connected resource and enables TLS connections with verified hostnames.
 
-4. Copy the **hostname** to your clipboard
+4. 👉 Copy the **hostname** to your clipboard
 
-5. Now, find the destination with your student id e.g. **BusinessPartner-\<STUDENT>** and open "Edit mode"
+5. 👉 Now, find the destination with your student id e.g. **BusinessPartner-\<STUDENT>** and open "Edit mode"
 
    ![Destination](./images/plink-5.png)
 
-6. Make the following changes in your destination
+6. 👉 Make the following changes in your destination
    
    * Past the copied "hostname" from SAP Private Link service instance as a new URL
    * Change **ProxyType** to **"PrivateLink"**
@@ -142,26 +142,26 @@ If you're curious about the steps involved in setting up a Private Link connecti
 
    If you're interested in learning more about how to set up end-to-end SSL, you can check the details in the following [repository](https://github.com/SAP-samples/btp-build-resilient-apps/blob/extension-privatelink/tutorials/05-PrivateLink/README.md#setup-end-to-end-ssl).
 
-7. Restart the application to avoid destination caching issues. 
+7. 👉 Restart the application to avoid destination caching issues. 
    Open the Space and search for the application with your student number **"BPVerification-srv-\<STUDENT>"**  and restart it.
 
     ![CF Space](./images/cc-5.png)
     ![Search app](./images/cc-6.png)
     ![Restart](./images/plink-7.png)
 
-8. Run the application and check the connection details in Application Log.
+8. 👉 Run the application and check the connection details in Application Log.
    
-   Go to **"HTML5 Applications"** and open the application with your student number. e.g. **techedbusinesspartners\<STUDENT>**
+   👉 Go to **"HTML5 Applications"** and open the application with your student number. e.g. **techedbusinesspartners\<STUDENT>**
 
    ![HTML5 App](./images/cc-3.png)
 
-   To trigger an API call, select one of the business partners from the list and **block** or **unblock** it.
+   👉 To trigger an API call, select one of the business partners from the list and **block** or **unblock** it.
 
    ![Block/Unblock](./images/cc-4.png)
 
    Now you can go to the [Application Logging dashboard](https://logs.cf.us20.hana.ondemand.com/app/dashboards#/view/Overview?_g=(filters:!(),refreshInterval:(pause:!t,value:0),time:(from:now-15m,to:now))&_a=(description:'(default)%20%20Overview%20and%20some%20basic%20KPIs%20regarding%20failures,%20log%20counts,%20etc.',filters:!(),fullScreenMode:!f,options:(darkTheme:!f,useMargins:!f),query:(language:kuery,query:''),timeRestore:!f,title:Overview,viewMode:view)) to check the connectivity type.
 
-9. Once you opened the application logging dashboard, open the **Requests and Logs** tab and set following filters to find the right log entry.
+9. 👉 Once you opened the application logging dashboard, open the **Requests and Logs** tab and set the following filters to find the right log entry.
 
    | Field          | Operator | Value                           |
    |----------------|----------|---------------------------------|
