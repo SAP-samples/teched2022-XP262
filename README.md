@@ -25,7 +25,7 @@ If you complete an exercise early, please resist the urge to go on to the next o
 - [Exercise 2 - Get to know your own extension application artefacts on SAP BTP](exercises/ex2)
 - [Exercise 3 - Logging and Monitoring capabilities of SAP BTP with Application Logging service and Kibana Dashboards](exercises/ex3/)
 - [Exercise 4 - Get in touch with the data persistency: SAP HANA Cloud](exercises/ex4/)
-- [Exercise 5 - Haruts Exercise :-)](exercises/ex5/)
+- [Exercise 5 - Discover the connecting options of SAP BTP by utilizing SAP Cloud Connector and the SAP Private Link service](exercises/ex5/)
 
 ## How to obtain support
 
