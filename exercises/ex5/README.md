@@ -1,6 +1,6 @@
 # Exercise 5 - Discover the connectivity options of SAP BTP by utilizing SAP Cloud Connector and SAP Private Link service
 
-After seeing how the application behaves on different state changes or when something goes wrong, we can now have a closer look at the connectivity topic, to learn two different approaches to establish a connection between SAP BTP and SAP S/4HANA on-premise system.
+After observing how the application behaves on different state changes or when something goes wrong, we can now have a closer look at the connectivity topic, to learn two different approaches to establish a connection between SAP BTP and SAP S/4HANA on-premise system.
 
 One of the following approaches may be chosen, depending on requirements:
   * Cloud Connector
@@ -108,11 +108,11 @@ If you're curious about the steps involved in setting up a Private Link connecti
 
    ![SAP Private Link service instance](./images/plink-2.png)
 
-2. 👉 You can select it and click on **"View Credentials"**. 
+2. 👉 Select it, then choose **"View Credentials"**. 
 
    ![SAP Private Link service instance](./images/plink-3.png)
 
-3. 👉 You can find there the generated set of private DNS hostnames which will be used in upcoming steps for the private communication. 
+3. 👉 There you can find the created list of private DNS hostnames that will be utilized in upcoming steps for private communication.
 
    ![PrivateLink hostname](./images/plink-4.png)
 
@@ -125,13 +125,13 @@ If you're curious about the steps involved in setting up a Private Link connecti
 
 4. 👉 Copy the **hostname** to your clipboard
 
-5. 👉 Now, find the destination with your student id e.g. **BusinessPartner-\<STUDENT>** and open "Edit mode"
+5. 👉 Now, find the destination with your student number e.g. **BusinessPartner-\<STUDENT>** and open "Edit" mode
 
    ![Destination](./images/plink-5.png)
 
-6. 👉 Make the following changes in your destination
+6. 👉 Make the following adjustments in your destination
    
-   * Past the copied "hostname" from SAP Private Link service instance as a new URL
+   * Past the copied "hostname" from the SAP Private Link service instance as a new URL
    * Change **ProxyType** to **"PrivateLink"**
    * Add **"TrustALL=true"** as an Additional Property
    * Re-enter the password, provided by the instructor
@@ -161,7 +161,7 @@ If you're curious about the steps involved in setting up a Private Link connecti
 
    Now you can go to the [Application Logging dashboard](https://logs.cf.us20.hana.ondemand.com/app/dashboards#/view/Overview?_g=(filters:!(),refreshInterval:(pause:!t,value:0),time:(from:now-15m,to:now))&_a=(description:'(default)%20%20Overview%20and%20some%20basic%20KPIs%20regarding%20failures,%20log%20counts,%20etc.',filters:!(),fullScreenMode:!f,options:(darkTheme:!f,useMargins:!f),query:(language:kuery,query:''),timeRestore:!f,title:Overview,viewMode:view)) to check the connectivity type.
 
-9. 👉 Once you opened the application logging dashboard, open the **Requests and Logs** tab and set the following filters to find the right log entry.
+9. 👉 Once the application logging dashboard has been accessed, open the **Requests and Logs** tab and set the following filters to find the right log entry.
 
    | Field          | Operator | Value                           |
    |----------------|----------|---------------------------------|
@@ -176,5 +176,5 @@ If you're curious about the steps involved in setting up a Private Link connecti
    ![Kibana ProxyType PrivateLink](./images/plink-8.png)
 
 ## Summary
-Well done; you now have a solid understanding of the various connecting options offered by the SAP Business Technology Platform.
+Well done; with this knowledge, you should be able to establish a connection to an on-premises SAP S/4HANA system using any of the several connectivity methods provided by the SAP Business Technology Platform.
 
