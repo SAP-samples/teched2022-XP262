@@ -1,10 +1,10 @@
-# Getting Started
+# Exercise 0 - Getting Started
 
 Before you start work on the existing extension application, let's make sure you have all of the tools you need to complete this session successfully. This exercise will give you a few login credentials that you will need to remember throughout the session. **Please do not use any other user than the one assigned to you.**
 
 There are only two accounts that you need in the entire session. Both of them are provided by SAP, please do not use your personal users for the subsequent exercises.
 
-## Test SAP S/4HANA access
+## Exercise 0.1 Test SAP S/4HANA access
 
 The _source system_ so to speak for our extension application is an SAP S/4HANA on-premise system. You will mostly work in the transaction **BP** to create/modify business partners which will trigger events for SAP Event Mesh or to check changes to business partners that have been made using the SAP BTP extension application. This user is used for tasks that are usually done by a functional end user.
 
@@ -28,17 +28,17 @@ You will see the transaction to maintain business partners:
 
     ![Business Partner maintenance transaction](./images/maintain_bp.png)
 
-## Test SAP BTP access
+## Exercise 0.2 Test SAP BTP access
 
 Of course, you will also receive a user for SAP Business Technology Platform in order to be able to access your very own existing extension application and the corresponding services of this scenario. 
 
 1. There are a few tool options that we have in order to walk you through this session and the takeways that we want to tackle. It could either be the Cloud Foundry CLI/SAPBTP CLI(either on the machines commandline/terminal or SAP Business Application Studio) or the SAP BTP Cockpit. We try to keep tools/and the potential hurdles at a minimum level in order to focus on the key aspects - understanding and getting in touch with the architecture - of the extension application. That's why we are going to use the SAP BTP Cockpit throughout this session.
 
-👉 Open the SAP BTP Cockpit: https://cockpit.eu10.hana.ondemand.com/cockpit/#/globalaccount/fb7dfea1-5d8c-431d-bd16-1ebbe842f62f/subaccount/145b0547-19d3-4d89-9b81-e55ed8d5f1db
+👉 Open the SAP BTP Cockpit: <https://cockpit.eu10.hana.ondemand.com/cockpit/?idp=tdcteched1.accounts.ondemand.com#/globalaccount/fb7dfea1-5d8c-431d-bd16-1ebbe842f62f/subaccount/145b0547-19d3-4d89-9b81-e55ed8d5f1db>
 
 👉 Enter your SAP BTP account credentials: 
 
-* User: XP262-0XX
+* User: XP262_0XX
 * Password: ask your instructor if not yet provided
 
     ![SAP BTP Logon screen](./images/btp_logon.png)
@@ -66,5 +66,5 @@ Of course, you will also receive a user for SAP Business Technology Platform in 
     Here, for example, you get an overview of the applications that have been deployed in this Cloud Foundry space. There is an application for each participant that is only intended for the respective participant. Each app has its own front end with its own URL (SAP Fiori Elements application), its own backend (CAP application) and its own HDI container in SAP HANA Cloud. The only thing you share with all participants is the SAP S/4HANA system, even if you have been given your very own user for it. But more about that later. 
 ## Summary
 
-Now that you have tested both required accounts, you should be well equipped to see the extension application in action. In the next step, you'll see how SAP Event Mesh connects SAP S/4HANA and SAP BTP. 
+Now that you have tested both required accounts, you should be well equipped to see the extension application in action. In the next step, you'll get to know the SAP BTP artefacts that your insctructors have already deployed for each student. 
 Continue to - [Exercise 1 - Exercise 1](../ex1/README.md)

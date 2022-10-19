@@ -81,6 +81,8 @@ Kibana displays a set of pre-built dashboards that help you analyze your applica
 
 ## Summary
 
-You've now hopefully gotten a more detailed understanding of how your application behaves and get a better overview and concrete information, when events have been consumed from the Queue or how CAP checks the need for SAP Event Mesh Queues/Subscriptions. In the next exercise, we'll cover the data persistency for this application - the HDI Container on SAP HANA Cloud. 
+You've now hopefully gotten a more detailed understanding of how your application behaves and get a better overview and concrete information, when events have been consumed from the Queue or how CAP checks the need for SAP Event Mesh Queues/Subscriptions. 
 
-Continue to - [Exercise 4 - Excercise 4 ](../ex4/README.md)
+In the next exercise, we'll cover the data persistency for this application - the HDI Container on SAP HANA Cloud. 
+
+Continue to - [Exercise 4](../ex4/README.md)

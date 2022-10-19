@@ -1,4 +1,4 @@
-# Exercise 1 - Explore SAP Event Mesh in action 
+# Exercise 2 - Explore SAP Event Mesh in action 
 
 In many cases, typical extension applications for any LoB system today are based on event-driven architectures. An event-driven architecture, which is popular in modern applications built with microservices, uses events to trigger and communicate across decoupled services. An event is a status change or an update, such as a new created or update Business Partner. 
 
@@ -187,5 +187,7 @@ You might have probably seen the benefits of decoupling the SAP S/4HANA system a
 
 You've now seen how the CAP (SAP Cloud Application Programming Model) application on SAP BTP is getting notified about changes on business objects in SAP S/4HANA. SAP Event Mesh enables the source system to function independently of potential interested parties. The source system remains completely unaffected whether 50 or 100 event consumers are connected, or whether certain consumers are not online at the time. As a result, SAP Event Mesh enables the decoupling of producers and consumers.
 
-Continue to - [Exercise 2 - Exercise 2 Description](../ex2/README.md)
+In the following exercise, you'll get a glimpse of what goes on behind the scenes and gain confidence in using Logging and Monitoring.
+
+Continue to - [Exercise 3](../ex3/README.md)
 

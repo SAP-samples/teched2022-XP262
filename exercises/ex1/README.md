@@ -53,7 +53,8 @@ The connecting piece between SAP S/4HANA (via SAP Cloud Connector and SAP Event 
 
 3. This overview gives you details about the application itself (how much disk space, memory), the ability to stop/start/restart/delete the application as well as some auditing/logging menus. 
 
-    👉 Click on the URL to open the application. 
+    👉 Click on the **Application Route** to open the application. 
+    ![Application route aka URL of the CAP application](./images/application_route.png) 
     
     This is a CAP default landing page that lists the application's endpoints; these endpoints are also used by the SAP Fiori application. All endpoints are secure, and you are not currently authenticated, so you are not authorized to read data. 
     ![Landing page of the CAP application](./images/cap_landingpage.png) 
@@ -88,7 +89,7 @@ The connecting piece between SAP S/4HANA (via SAP Cloud Connector and SAP Event 
 
 7. 👉 To see how the frontend is connected with the backend, let's go bock to the **SAP BTP subaccount overview**. 
 
-8. 👉 Go to **Instances && subscriptions**. Select the service instance **BPVerification-destination-service-\<STUDENT>**. A new tab will open with the details of this service instance. 
+8. 👉 Go to **Instances and subscriptions**. Select the service instance **BPVerification-destination-service-\<STUDENT>**. A new tab will open with the details of this service instance. 
    
     This service instance is bound to the HTML5 Application repository instance for each frontend application and is used to provide URL endpoints.
     ![Destination Service instance for HTML5 app repo](./images/destservice_instance.png) 
@@ -104,7 +105,7 @@ The connecting piece between SAP S/4HANA (via SAP Cloud Connector and SAP Event 
 
 Nice! Now that you roughly know how the frontend (SAP Fiori application) and the backend (CAP Node.js app and SAP HANA Cloud) is connected, let's dig a little deeper. In the next exercise, you'll see how SAP Event Mesh connects SAP S/4HANA and SAP BTP and see the application itself in action.  
 
-Continue to - [Exercise 2 - Exercise 2 Description](../ex2/README.md)
+Continue to - [Exercise 2](../ex2/README.md)
 
 
 

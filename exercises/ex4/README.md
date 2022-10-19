@@ -102,5 +102,5 @@ You should now have a good overview of how the extension application is notified
 
 Next, you are going to have a look at one of the key elements in extension scenarios: The type of connectivity to your source system. Until now, you have used a Destination that is leveraging the SAP Cloud Connector. Since both your SAP BTP subaccount and the SAP S/4HANA system are hosted on Microsoft Azure, there's an alternative connectivity option. 
 
-Continue to - [Exercise 5 - Exercise 5 Description](../ex5/README.md)
+Continue to - [Exercise 5](../ex5/README.md)
 
