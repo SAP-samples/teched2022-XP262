@@ -67,20 +67,33 @@ Now that you have access to the tables, we'll see all of the processing once aga
    
 3. 👉 Also, open your SAP Fiori application in parallel and set the exact same filter for Last name = \<STUDENT>. Check if the data you have in your SAP HANA Cloud is identical to what you see in the SAP Fiori application. 
 
-4. 👉 Go the SAP S/4HANA system and create yet another business partner. Make sure to provide a First Name, Last Name (**\<STUDENT>**) and an Address.
+4. 👉 Go the SAP S/4HANA system and create yet another business partner. Make sure to provide a First Name, Last Name (**\<STUDENT>**) and an Address, similarly to the business partners you have created in the previous steps and exercises.
    
-5. 👉 Refresh the table data and see if the data has been saved in SAP HANA Cloud.
+5. 👉 Refresh the table data in SAP HANA Cloud and verify if the data has been saved in SAP HANA Cloud.
     ![Display the Verifications table data](images/refresh_table_data.png)
 
-6. 👉 Also, refresh the SAP Fiori Application to see if the recently created business partner was processed. 
+6. 👉 Also, refresh your SAP Fiori Application to see if the recently created business partner was processed. 
 
-7. 👉 Edit the recently created business partner and set the verifications status to 
+7. 👉 Edit the recently created business partner and set the verifications status to **INVALID**.
+    ![Display the Verifications table data](images/set_verificationstatus.png)
 
+The Verification Status field is only available in the extension application and is not part of any data model in SAP S/4HANA. All other data (such as the business partner addresses) are updated in SAP S/4HANA via the OData APIs. 
+
+As you may remember, SAP Event Mesh delivers events whenever a new business partner is created or changed. In this respect, all other applications also receive changes to business partner addresses that you have made in your extension application since they are replicated back to SAP S/4HANA using the OData APIs. 
+
+Because the verification status of the business partner is only stored in your HDI container, the content varies from extension application to extension application. This means, if you are updating the Verification Status for Business Partner 1000700 in your application, the changes won't show up in SAP HANA Cloud of any other student. In this scenario, it is only a single field (verification status) that is not available in the SAP S/4HANA system and is therefore specific to the extension use case on SAP BTP. In most cases, however, extensions are much more complex and extensive than a single field. 
+
+8. 👉 Now that you know that the verification status is only updated in your data model: Check in the SAP Fiori application of another student whether the verification status for the business partner you adjusted in the previous step is still unchanged here. (In random cases, it is possible that the student in whose SAP Fiori application you are currently working has also adjusted the verification status of exactly the same business partner).
+
+Below you can see a screenshot of the application of your instructor (left), on the right an application of another student: Same business partner, different values for verification status.
+![Display the Verifications table data](images/app_comparison.png)
+
+**IMPORTANT**: This shouldn't showcase how you can run the exact same application multiple times in parallel.  Rather, it is intended to illustrate the architecture of a possible extension application. CAP creates its own HDI container for data storage by default. . 
 ## Summary
 
 You should now have a good overview of how the extension application is notified about new or changed business partners using SAP Event Mesh and where the data is stored. 
 
-Next, you are going to have a look at one of the key elements in extension scenarios: The type of connectivity to your source system. Until now, you have used a Destination that is leveraging the SAP Cloud Connector. Since both your SAP BTP subaccount and the SAP S/4HANA system are both hosted on Microsoft Azure, there's an alternative connectivity option. 
+Next, you are going to have a look at one of the key elements in extension scenarios: The type of connectivity to your source system. Until now, you have used a Destination that is leveraging the SAP Cloud Connector. Since both your SAP BTP subaccount and the SAP S/4HANA system are hosted on Microsoft Azure, there's an alternative connectivity option. 
 
 Continue to - [Exercise 5 - Exercise 5 Description](../ex5/README.md)
 
