@@ -53,12 +53,16 @@ By default, the application in this exercise is configured to connect via Cloud 
    ![Destination](./images/cc-2.png)
 
 3. Run the application and check the connection details in Application Log.
+
+   👉 Open the SAP S/4HANA system and create a new business partner by providing the *firstname and lastname* (transaction ***/nbp***)
    
-   👉 Go to **"HTML5 Applications"** and open the application with your student number. e.g. **techedbusinesspartners\<STUDENT>**
+   ![S/4HANA BP](./images/s4-1.png)
+   
+   👉 Go to **"HTML5 Applications"** in your SAP BTP cockpit and open the application with your student number. e.g. **techedbusinesspartners\<STUDENT>**
 
    ![HTML5 App](./images/cc-3.png)
 
-   👉 To trigger an API call, select one of the business partners from the list and **block** or **unblock** it.
+   👉 To trigger an API call, hit the **"GO"** button to load the newly created business partner.
 
    ![Block/Unblock](./images/cc-4.png)
 
@@ -74,6 +78,12 @@ By default, the application in this exercise is configured to connect via Cloud 
     Over there you can fine the link to open the **Kibana Dashboard**
 
     ![Kibana](./images/cc-7.png)
+
+   👉 In case you will be asked for authentication, enter the following origin key (***tdcteched1-platform***) from the identity provider and sign in with alternative identity provider 
+
+    ***Origin Key: tdcteched1-platform***
+
+    ![Kibana sign in](./images/cc-11.png)
 
    👉 Once you opened the application logging dashboard, open the **Requests and Logs** tab and set following filters to find the right log entry.
 
@@ -149,17 +159,27 @@ If you're curious about the steps involved in setting up a Private Link connecti
     ![Search app](./images/cc-6.png)
     ![Restart](./images/plink-7.png)
 
-8. 👉 Run the application and check the connection details in Application Log.
+8. Run the application and check the connection details in Application Log.
    
-   👉 Go to **"HTML5 Applications"** and open the application with your student number. e.g. **techedbusinesspartners\<STUDENT>**
+   👉 Open the SAP S/4HANA system and create a new business partner by providing the *firstname and lastname* (transaction ***/nbp***)
+      
+   ![S/4HANA BP](./images/s4-1.png)
+      
+   👉 Go to **"HTML5 Applications"** in your SAP BTP cockpit and open the application with your student number. e.g. **techedbusinesspartners\<STUDENT>**
 
    ![HTML5 App](./images/cc-3.png)
 
-   👉 To trigger an API call, select one of the business partners from the list and **block** or **unblock** it.
+   👉 To trigger an API call, hit the **"GO"** button to load the newly created business partner.
 
-   ![Block/Unblock](./images/cc-4.png)
+   ![Load BPs](./images/cc-4.png)
 
    Now you can go to the [Application Logging dashboard](https://logs.cf.us20.hana.ondemand.com/app/dashboards#/view/Overview?_g=(filters:!(),refreshInterval:(pause:!t,value:0),time:(from:now-15m,to:now))&_a=(description:'(default)%20%20Overview%20and%20some%20basic%20KPIs%20regarding%20failures,%20log%20counts,%20etc.',filters:!(),fullScreenMode:!f,options:(darkTheme:!f,useMargins:!f),query:(language:kuery,query:''),timeRestore:!f,title:Overview,viewMode:view)) to check the connectivity type.
+
+   👉 In case you will be asked for authentication, enter the following origin key (***tdcteched1-platform***) from the identity provider and sign in with alternative identity provider 
+
+    ***Origin Key: tdcteched1-platform***
+
+    ![Kibana sign in](./images/cc-11.png)
 
 9. 👉 Once the application logging dashboard has been accessed, open the **Requests and Logs** tab and set the following filters to find the right log entry.
 
