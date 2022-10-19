@@ -8,25 +8,25 @@ There are only two accounts that you need in the entire session. Both of them ar
 
 The _source system_ so to speak for our extension application is an SAP S/4HANA on-premise system. You will mostly work in the transaction **BP** to create/modify business partners which will trigger events for SAP Event Mesh or to check changes to business partners that have been made using the SAP BTP extension application. This user is used for tasks that are usually done by a functional end user.
 
-1. Log on to the SAP S/4HANA on-premise system using the SAPGUI on your Desktop. Therefore, open **SAP Logon** on your Desktop. 
+1. 👉 Log on to the SAP S/4HANA on-premise system using the SAPGUI on your Desktop. Therefore, open **SAP Logon** on your Desktop. 
 
-2. Select the system with SID **S4H** from the list of available systems. 
+2. 👉 Select the system with SID **S4H** from the list of available systems. 
 
-![List of available systems](./images/sap_logon.png)
+    ![List of available systems](./images/sap_logon.png)
 
-3. Enter the following credentials: 
+3. 👉 Enter the following credentials: 
 
 * Client: 100
 * User: S4H_0\<STUDENT> (**IMPORTANT:** \<STUDENT> is the student number on your desk. In case you have received *01*, please use S4H_001 as the user for the SAP S/4HANA sytem.)
 * Password: LasVegas22!
 
-1. Enter **bp** as the transaction code and hit **Enter** to open the transaction. Alternatively you can also double-click the entry in your user menu. 
+4. 👉 Enter **bp** as the transaction code and hit **Enter** to open the transaction. Alternatively you can also double-click the entry in your user menu. 
 
-![How to enter the Business Partner transaction](./images/bp_transaction_code.png)
+    ![How to enter the Business Partner transaction](./images/bp_transaction_code.png)
 
 You will see the transaction to maintain business partners: 
 
-![Business Partner maintenance transaction](./images/maintain_bp.png)
+    ![Business Partner maintenance transaction](./images/maintain_bp.png)
 
 ## Test SAP BTP access
 
@@ -36,12 +36,12 @@ Of course, you will also receive a user for SAP Business Technology Platform in 
 
 👉 Open the SAP BTP Cockpit: https://cockpit.eu10.hana.ondemand.com/cockpit/#/globalaccount/fb7dfea1-5d8c-431d-bd16-1ebbe842f62f/subaccount/145b0547-19d3-4d89-9b81-e55ed8d5f1db
 
-Enter your SAP BTP account credentials: 
+👉 Enter your SAP BTP account credentials: 
 
 * User: XP262-0XX
-* Password: (TODO, noch nicht bekannt)
+* Password: ask your instructor if not yet provided
 
-![SAP BTP Logon screen](./images/btp_logon.png)
+    ![SAP BTP Logon screen](./images/btp_logon.png)
 
 2. This page will be needed throughout this whole session and we'll further on reference this page as **SAP BTP subaccount overview**. 
 
@@ -49,23 +49,22 @@ Enter your SAP BTP account credentials:
 
 3. Let's have a look at a few menu items to proof that you have all the required RoleCollections. 
 
-👉 Go to **Services > Instances & Subscriptions**. You should see a list with service instances and subscriptions that your SAP TechEd instructors have been created before. If you have issues seing this list, please reach out to one of the instructors. 
+    👉 Go to **Services > Instances & Subscriptions**. You should see a list with service instances and subscriptions that your SAP TechEd instructors have been created before. If you have issues seing this list, please reach out to one of the instructors. 
 
-![BTP instances & subscriptions menu item](./images/btp_instances.png)
+    ![BTP instances & subscriptions menu item](./images/btp_instances.png)
 
-You should now be able to see the list of already created service instances and subscriptions in this subaccount: 
+    You should now be able to see the list of already created service instances and subscriptions in this subaccount: 
 
-![BTP instances & subscriptions menu item](./images/instances_subs_overview.png)
+    ![BTP instances & subscriptions menu item](./images/instances_subs_overview.png)
 
-4. Go back to the **Overview** menu where you'll find lots of information about the subaccount itself. Among other things, there is a list of Cloud Foundry spaces inside, you should see a **dev** space there. 
+4. 👉 Go back to the **Overview** menu where you'll find lots of information about the subaccount itself. Among other things, there is a list of Cloud Foundry spaces inside, you should see a **dev** space there. 
 
-![Go to Cloud Foundry space by clicking on the dev space name](./images/go_to_cfspace.png)
+    ![Go to Cloud Foundry space by clicking on the dev space name](./images/go_to_cfspace.png)
 
-👉 Navigate directly to the Cloud Foundry space by clicking on **dev**. 
+    👉 Navigate directly to the Cloud Foundry space by clicking on **dev**. 
 
-Here, for example, you get an overview of the applications that have been deployed in this Cloud Foundry space. There is an application for each participant that is only intended for the respective participant. Each app has its own front end with its own URL, its own backend and its own HDI container in the SAP HANA Cloud.The only thing you share with all participants is the SAP S/4HANA system, even if you have been given your very own user for it. But more about that later. 
-
+    Here, for example, you get an overview of the applications that have been deployed in this Cloud Foundry space. There is an application for each participant that is only intended for the respective participant. Each app has its own front end with its own URL (SAP Fiori Elements application), its own backend (CAP application) and its own HDI container in SAP HANA Cloud. The only thing you share with all participants is the SAP S/4HANA system, even if you have been given your very own user for it. But more about that later. 
 ## Summary
 
 Now that you have tested both required accounts, you should be well equipped to see the extension application in action. In the next step, you'll see how SAP Event Mesh connects SAP S/4HANA and SAP BTP. 
-Continue to - [Exercise 1 - Exercise 1 Description](../ex1/README.md)
+Continue to - [Exercise 1 - Exercise 1](../ex1/README.md)
