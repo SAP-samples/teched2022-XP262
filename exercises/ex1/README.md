@@ -9,7 +9,9 @@ Before we set out to understand the actual logic behind the extension app on SAP
 - A separate HDI container that stores only the data processed by the corresponding frontend and backend.
 - A separate SAP Event Mesh Queue, which ensures that each participant receives dedicated events from the SAP S/4HANA on-premise system. 
 
-Those artefacts have your personal student number in the service/application name in it. 
+Those artefacts have your personal student number in the service/application name in it.
+
+Now over to the fictional business scenario: John who is an employee of Business Partner Validation Firm iCredible, which is a third-party vendor of ACME Corporation would like to get notifications whenever Business Partners are created/updated in the SAP S/4HANA backend system of ACME Corporation. John would then be able to review the Business Partner details in his extension app on the SAP Business Technology Platform. He would proceed to visit the Business Partner’s registered office and do some background verification. John would then proceed to update/validate the verification details into the extension app
 
 ## Exercise 1.1 Open the SAP Fiori application 
 
