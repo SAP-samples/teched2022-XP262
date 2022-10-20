@@ -24,6 +24,11 @@ Logging and monitoring are crucial parts of cloud native architectures. Applicat
 
  > The logs on this page are a good place to start because they are more structured than the log output from the Cloud Foundry CLI. You could already begin your exploratory searches.. But that is not the focus of this discussion.
 
+  👉 In case you will be asked for authentication, enter the following origin key (***tdcteched1-platform***) from the identity provider and sign in with alternative identity provider 
+
+  ***Origin Key: tdcteched1-platform***
+
+  ![Kibana sign in](./images/cc-11.png)
 
 ## Exercise 3.2 Get used to filters 
 
