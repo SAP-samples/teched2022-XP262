@@ -4,6 +4,14 @@ Before you start work on the existing extension application, let's make sure you
 
 There are only two accounts that you need in the entire session. Both of them are provided by SAP, please do not use your personal users for the subsequent exercises.
 
+
+--- 
+**IMPORTANT**: A so-called student number has been given to you. You will repeatedly see the placeholder **STUDENT>** throughout the entire session. Please replace this placeholder with your own student number whenever it's needed.
+
+For instance: Student number 37 has been given to you. You receive the following task in one of the exercises: "*Please filter for BPVerification-srv-STUDENT>*."
+Therefore, you would have to filter BPVerification-srv-37.
+
+
 ## Exercise 0.1 Test SAP S/4HANA access
 
 The _source system_ so to speak for our extension application is an SAP S/4HANA on-premise system. You will mostly work in the transaction **BP** to create/modify business partners which will trigger events for SAP Event Mesh or to check changes to business partners that have been made using the SAP BTP extension application. This user is used for tasks that are usually done by a functional end user.
@@ -17,15 +25,13 @@ The _source system_ so to speak for our extension application is an SAP S/4HANA 
 3. 👉 Enter the following credentials: 
 
 * Client: 100
-* User: S4H_0\<STUDENT> (**IMPORTANT:** \<STUDENT> is the student number on your desk. In case you have received *01*, please use S4H_001 as the user for the SAP S/4HANA sytem.)
+* User: S4H_0\<STUDENT> (**IMPORTANT:** \<STUDENT> is the student number on your desk. In case you have received *01*, please use S4H_001 as the user for the SAP S/4HANA sytem. **Remember that there are three digits after the *S4H_* even though your student number doesn't have 3 digits - please use leading zeros, for instance S4H_001**.
 * Password: LasVegas22!
 
 4. 👉 Enter **bp** as the transaction code and hit **Enter** to open the transaction. Alternatively you can also double-click the entry in your user menu. 
 
     ![How to enter the Business Partner transaction](./images/bp_transaction_code.png)
-
 You will see the transaction to maintain business partners: 
-
     ![Business Partner maintenance transaction](./images/maintain_bp.png)
 
 ## Exercise 0.2 Test SAP BTP access
@@ -34,11 +40,11 @@ Of course, you will also receive a user for SAP Business Technology Platform in 
 
 1. There are a few tool options that we have in order to walk you through this session and the takeways that we want to tackle. It could either be the Cloud Foundry CLI/SAPBTP CLI(either on the machines commandline/terminal or SAP Business Application Studio) or the SAP BTP Cockpit. We try to keep tools/and the potential hurdles at a minimum level in order to focus on the key aspects - understanding and getting in touch with the architecture - of the extension application. That's why we are going to use the SAP BTP Cockpit throughout this session.
 
-👉 Open the SAP BTP Cockpit: <https://cockpit.eu10.hana.ondemand.com/cockpit/?idp=tdcteched1.accounts.ondemand.com#/globalaccount/fb7dfea1-5d8c-431d-bd16-1ebbe842f62f/subaccount/145b0547-19d3-4d89-9b81-e55ed8d5f1db>
+    👉 Open the SAP BTP Cockpit: <https://cockpit.eu10.hana.ondemand.com/cockpit/?idp=tdcteched1.accounts.ondemand.com#/globalaccount/fb7dfea1-5d8c-431d-bd16-1ebbe842f62f/subaccount/145b0547-19d3-4d89-9b81-e55ed8d5f1db>
 
-👉 Enter your SAP BTP account credentials: 
+    👉 Enter your SAP BTP account credentials: 
 
-* User: XP262_0XX
+* User: XP262_0XX (**Remember that there are three digits after *XP262_* even though your student number doesn't have 3 digits - please use leading zeros, for instance XP262_001**)
 * Password: ask your instructor if not yet provided
 
     ![SAP BTP Logon screen](./images/btp_logon.png)
