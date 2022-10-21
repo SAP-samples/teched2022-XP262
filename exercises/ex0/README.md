@@ -31,7 +31,8 @@ The _source system_ so to speak for our extension application is an SAP S/4HANA 
 4. 👉 Enter **bp** as the transaction code and hit **Enter** to open the transaction. Alternatively you can also double-click the entry in your user menu. 
 
     ![How to enter the Business Partner transaction](./images/bp_transaction_code.png)
-You will see the transaction to maintain business partners: 
+    
+    You will see the transaction to maintain business partners: 
     ![Business Partner maintenance transaction](./images/maintain_bp.png)
 
 ## Exercise 0.2 Test SAP BTP access
