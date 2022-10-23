@@ -74,7 +74,7 @@ Now that you have access to the tables, we'll see all of the processing once aga
    
 3. 👉 Also, open your SAP Fiori application in parallel and set the exact same filter for Last name = \<STUDENT>. Check if the data you have in your SAP HANA Cloud is identical to what you see in the SAP Fiori application. 
 
-4. 👉 Go the SAP S/4HANA system and create yet another business partner. Make sure to provide a First Name, Last Name (**\<STUDENT>**) and an Address, similarly to the business partners you have created in the previous steps and exercises.
+4. 👉 Go the SAP S/4HANA system and create another business partner. Make sure to provide a First Name, Last Name (**\<STUDENT>**) and an Address, similarly to the business partners you have created in the previous steps and exercises.
    
 5. 👉 Refresh the table data in SAP HANA Cloud and verify if the data has been saved in SAP HANA Cloud.
     ![Display the Verifications table data](images/refresh_table_data.png)

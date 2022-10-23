@@ -13,6 +13,11 @@ Those artefacts have your personal student number in the service/application nam
 
 Now over to the fictional business scenario: John who is an employee of Business Partner Validation Firm iCredible, which is a third-party vendor of ACME Corporation would like to get notifications whenever Business Partners are created/updated in the SAP S/4HANA backend system of ACME Corporation. John would then be able to review the Business Partner details in his extension app on the SAP Business Technology Platform. He would proceed to visit the Business Partner’s registered office and do some background verification. John would then proceed to update/validate the verification details into the extension app
 
+The high level architecture is as follows: 
+    ![High Level Architecture diagramm](images/highlevel-arch.png)
+
+> Some components (such as Autoscaler Service, SAP Alert Notification service, Continous Integration & Delivery /CD, SAP Cloud Transport Management service) have not been implemented in the system for the sake of simplicity for this session, but exist in this case only on the architecture depiction. 
+
 ## Exercise 1.1 Open the SAP Fiori application 
 
 1. The SAP Fiori application has already been deployed to the SAP HTML5 Application Repository for SAP BTP and is connected to your specific CAP application. 
@@ -108,6 +113,10 @@ The connecting piece between SAP S/4HANA (via SAP Cloud Connector and SAP Event 
 Nice! Now that you roughly know how the frontend (SAP Fiori application) and the backend (CAP Node.js app and SAP HANA Cloud) is connected, let's dig a little deeper. In the next exercise, you'll see how SAP Event Mesh connects SAP S/4HANA and SAP BTP and see the application itself in action.  
 
 Continue to - [Exercise 2](../ex2/README.md)
+
+
+
+
 
 
 

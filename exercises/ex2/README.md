@@ -12,7 +12,7 @@ If you want to learn more about the general concepts of SAP Event Mesh:
 
 [Learn more about the general messaging concepts of SAP Event Mesh on developers.sap.com](https://developers.sap.com/tutorials/cp-enterprisemessaging-learn-messaging-concepts.html)
 
-## Exercise 1.1 Get to know the SAP Event Mesh management dashboard
+## Exercise 2.1 Get to know the SAP Event Mesh management dashboard
 
 SAP Event Mesh is a fully managed service on SAP BTP and offers a management dashboard out of the box. This gives you the opportunity to interact with Queues, Subscriptions and many more artefacts via the UI as an alternative to the [REST APIs for SAP Event Mesh](https://api.sap.com/package/SAPEventMeshDefaultPlan/rest).
 
@@ -20,31 +20,31 @@ SAP Event Mesh is a fully managed service on SAP BTP and offers a management das
 👉 Navigate to **Instances and Subscriptions** and open the SAP Event Mesh management dashboard via the link next to the Subscription name. 
 ![Open SAP Event Mesh subscription](./images/open_eventmesh.png)
 
-## Exercise 1.2 Check out the queues in the SAP Event Mesh management dashboard
+## Exercise 2.2 Check out the queues in the SAP Event Mesh management dashboard
 
 1. Each student's CAP applications have already been deployed by SAP TechEd instructors. CAP checks whether queues are required during application startup and, if so, whether they have already been created and connected to the application. In the service definition, for example, the [CDS declarations state that a subscription to the topic](https://github.com/SAP-samples/btp-build-resilient-apps/blob/extension/srv/external-catalog.cds) *tfe/bpem/em/ce/sap/s4/beh/businesspartner/v1/BusinessPartner/Created/v1* and *tfe/bpem/em/ce/sap/s4/beh/businesspartner/v1/BusinessPartner/Changed/v1* is required. If the Queue has not yet been created, CAP creates it with a combination of the application name and the application_id (that you noted down in the previous exercise) in its name. 
 
-👉 Navigate to **Message Clients**. 
-👉 Select the **subscriber** message client. (a message client = a service instance of SAP Event Mesh)
-👉 Go to the **Queue** and filter for your application_id (Environment Variable of the CAP application) that you have identified in the previous exercise. 
+    👉 Navigate to **Message Clients**. 
+    👉 Select the **subscriber** message client. (a message client = a service instance of SAP Event Mesh)
+    👉 Go to the **Queue** and filter for your application_id (Environment Variable of the CAP application) that you have identified in the previous exercise. 
 
     ![Search for your own queue](./images/student_queue.png)
 
-There should only be one queue listed now. This queue is linked to your CAP application and receives events from SAP S/4HANA - regardless of whether the other applications have processed those events or not, because all other applications have their own queue and only consume events from their own queue. Your queue should be empty because all business partners changes should have been processed by your CAP application. 
+    There should only be one queue listed now. This queue is linked to your CAP application and receives events from SAP S/4HANA - regardless of whether the other applications have processed those events or not, because all other applications have their own queue and only consume events from their own queue. Your queue should be empty because all business partners changes should have been processed by your CAP application. 
 
 2. All queues are subscribed to a certain Topic. Topics are named logical channels to which messages are published. Subscribers in a topic-based system receive all messages published to the topics to which they have subscribed. All subscribers to a topic receive their own copy of the same message. 
 
-👉 Select the **Actions** icon in the row of your queue (on the very right) and open **Queue subscriptions**.
-    ![Navigate to Queue subscriptions](./images/student_queue.png)
+    👉 Select the **Actions** icon in the row of your queue (on the very right) and open **Queue subscriptions**.
+        ![Navigate to Queue subscriptions](./images/student_queue.png)
 
-👉 You will see that your Queue is subscribed to the Topics that have been defined in the [CAP application](https://github.com/SAP-samples/btp-build-resilient-apps/blob/extension/srv/external-catalog.cds). 
-    ![Display Queue Subscriptions](./images/display_subscriptions.png)
+    👉 You will see that your Queue is subscribed to the Topics that have been defined in the [CAP application](https://github.com/SAP-samples/btp-build-resilient-apps/blob/extension/srv/external-catalog.cds). 
+        ![Display Queue Subscriptions](./images/display_subscriptions.png)
 
-> If you want to know more how you can configure that SAP S/4HANA pushes events to certain topics, have a look at the corresponding tutorial: [Configure event based communication between SAP S/4HANA and SAP Event Mesh](https://github.com/SAP-samples/btp-build-resilient-apps/tree/extension/tutorials/07-SetupEventMesh)
+    > If you want to know more how you can configure that SAP S/4HANA pushes events to certain topics, have a look at the corresponding tutorial: [Configure event based communication between SAP S/4HANA and SAP Event Mesh](https://github.com/SAP-samples/btp-build-resilient-apps/tree/extension/tutorials/07-SetupEventMesh)
 
 3. 👉 You will need the overview of your Queue further on: Leave this browser window or tab open, so you can observe in parallel how SAP Event Mesh behaves on certain actions you execute. (Bookmarking is also an option) 
 
-## Exercise 1.3 Create a new business partner in SAP S/4HANA using the SAP GUI
+## Exercise 2.3 Create a new business partner in SAP S/4HANA using the SAP GUI
 
 Now that you know roughly what your application looks like and how the individual artefacts are connected, it's time to see it all in action by creating a new business partner in the SAP S/4HANA system. 
 
@@ -64,25 +64,25 @@ Now that you know roughly what your application looks like and how the individua
    - City
    - Country
 
-6. 👉 Finish the business partner creation via the **Save** icon. 
+6. 👉 **Save** the business partner to finish the creation (and implicitly trigger the message via SAP Event Mesh). 
    
-    ![Open SAP Event Mesh subscription](./images/businesspartner1_creation.png)
+    ![business partner creation in SAP S/4HANA](./images/businesspartner1_creation.png)
 
-## Exercise 1.4 Observe the event consumption in SAP BTP Cockpit and SAP Event Mesh management dashboard
+## Exercise 2.4 Observe the event consumption in SAP BTP Cockpit and SAP Event Mesh management dashboard
 
 The business partner has now been created in the SAP S/4HANA system. Asynchronously, the system has pushed an event to the SAP Event Mesh topic. All Queues subscribed to *tfe/bpem/em/ce/sap/s4/beh/businesspartner/v1/BusinessPartner/Created/v1* will receive a message with the ID of the business partner you have recently created. 
 
 1. Let's check if the SAP Event Mesh management dashboard shows a new message.  Since your CAP application is stopped, no messages should be taken from your Queue. 
 
-👉 **Refresh** the status of your Queue. There should be a new message or at least one, since other attendees in the same SAP S/4HANA system have most likely also created Business Partners that are published to the same SAP Event Mesh Topic. You will get the messages as well, since all Queues are subscribed to the same Topic.
-    ![New message in the queue](./images/new_message_queue.png)
+    👉 **Refresh** the status of your Queue. There should be a new message or at least one, since other attendees in the same SAP S/4HANA system have most likely also created Business Partners that are published to the same SAP Event Mesh Topic. You will get the messages as well, since all Queues are subscribed to the same Topic.
+        ![New message in the queue](./images/new_message_queue.png)
 
 
 2. Let's see what the message contains to better understand how the extension application processes the message. 
 
-👉 Navigate to **Test** in the side menu. Open your particular queue in the **Consume Messages section** (filter for **srv-\<STUDENT>/** or your application_id). 
+    👉 Navigate to **Test** in the side menu. Open your particular queue in the **Consume Messages section** (filter for **srv-\<STUDENT>/** or your application_id). 
 
-You should get the same information about your Queue as you had it in the recent view.
+    You should get the same information about your Queue as you had it in the recent view.
 
 3. 👉 Hit **Consume Message** to take the first message that has been sent from the Queue. (*Consuming* means that this message is permanently removed from the Queue.)
     ![New message in the queue](./images/test_queue.png)
@@ -117,7 +117,7 @@ In short:
 4) Process the business partner data and save it in the HDI Container on SAP HANA Cloud. 
 
 
-## Exercise 1.4 Start your application and the event consumption 
+## Exercise 2.5 Start your application and the event consumption 
 
 Now that you have seen what data the CAP application will actually receive once it consumes a message, let's give the CAP application a nudge to actually do its work. The messages in the queues are waiting. 
 
@@ -145,16 +145,14 @@ Now that you have seen what data the CAP application will actually receive once 
     👉 Go back to the SAP GUI and create another business partner (don't forget to provide your student number as Last Name and also enter the address information). **Save** the business partner to fire the event for SAP Event Mesh. 
     ![Create the new business partner](./images/bp2_creation.png)
 
-    👉 Close the Transaction in the SAP GUI. Otherwise you would exclusively lock this busines partner for further changes (that you are going to made in the next steps).
-
     👉 Refresh the SAP Fiori application on SAP BTP to see the recently created business partner.
-    ![Filter for Last Name and refresh](./images/bp_filter2.png)
+    ![Filter for Last Name and refresh](./images/filter_bp2.png)
+
+> If you are interested in the coding that processes the message from SAP Event Mesh: [GitHub](https://github.com/SAP-samples/btp-build-resilient-apps/blob/extension/srv/catalog.js#L24-L46)
 
 
 4. Let's now change the address of one of your business partners in the SAP Fiori application and/or block the business partner.
     👉 Select a business partner to navigate to the details page. Go into the **Edit** mode and change the address to whatever you want, set the business partner to **Verified** and hit **Save** (lower right edge of the page).
-
-    Here's the corresponding coding: [GitHub](https://github.com/SAP-samples/btp-build-resilient-apps/blob/extension/srv/catalog.js#L50-L69)
 
     ![Update the recently created business partner](./images/update_bp2.png)
 
@@ -164,6 +162,9 @@ Now that you have seen what data the CAP application will actually receive once 
     Here's the corresponding coding: [GitHub](https://github.com/SAP-samples/btp-build-resilient-apps/blob/extension/srv/catalog.js#L75-L89)
 
     The changes will now be sent to the SAP S/4HANA system using your Destination (of type SAP Cloud Connector so far). The field **Verification Status** is not available in the SAP S/4HANA system and only important for our application. That's why it's only persisted in the tables of our application in the HDI Container on SAP HANA Cloud.
+
+    > If you are interested in the coding for blocking/unblocking business partners in SAP S/4HANA [GitHub](https://github.com/SAP-samples/btp-build-resilient-apps/blob/extension/srv/catalog.js#L75-L143)
+    > If you are interested in the coding for updating business partners in SAP S/4HANA: [GitHub](https://github.com/SAP-samples/btp-build-resilient-apps/blob/extension/srv/catalog.js#L48-L73)
     
     Here's the corresponding coding: [GitHub](https://github.com/SAP-samples/btp-build-resilient-apps/blob/extension/srv/catalog.js#L50-L69)
 
@@ -177,11 +178,10 @@ Now that you have seen what data the CAP application will actually receive once 
 
    (If it hasn't been updated: don't blame SAP's products and tools, your instructors just aren't the best coders 😉 - feel free to submit a bug fix via a Pull Request)
 
+    You might have probably seen the benefits of decoupling the SAP S/4HANA system and the CAP application here.
 
-You might have probably seen the benefits of decoupling the SAP S/4HANA system and the CAP application here.
-
-**Resiliency**: The CAP application was down (the application was stopped by your instructors for demonstration purposes), the SAP S/4HANA system wasn't aware and doesn't have to be aware of it. Still, the processing can continue once the application is back online. 
-**Scalability**: The SAP S/4HANA system doesn't have any idea how many consumers (CAP application of consumers in this case) are connected and doesn't have to be aware of how many consumers are connected.
+    **Resiliency**: The CAP application was down (the application was stopped by your instructors for demonstration purposes), the SAP S/4HANA system wasn't aware and doesn't have to be aware of it. Still, the processing can continue once the application is back online. 
+    **Scalability**: The SAP S/4HANA system doesn't have any idea how many consumers (CAP application of consumers in this case) are connected and doesn't have to be aware of how many consumers are connected.
 
 ## Summary
 
@@ -190,4 +190,12 @@ You've now seen how the CAP (SAP Cloud Application Programming Model) applicatio
 In the following exercise, you'll get a glimpse of what goes on behind the scenes and gain confidence in using Logging and Monitoring.
 
 Continue to - [Exercise 3](../ex3/README.md)
+
+--- 
+
+Further Links: 
+* [SAP Event Mesh overview(discovery-center.cloud.sap)](https://discovery-center.cloud.sap/)
+* [Blog Posts for SAP Event Mesh (blogs.sap.com)](https://community.sap.com/search/?ct=blog&mt=73554900100800000765&q=sap%20event%20mesh)
+* [SAP Event Mesh tutorials (developers.sap.com)](https://developers.sap.com/tutorial-navigator.html?tag=software-product%3Atechnology-platform%2Fsap-business-technology-platform%2Fsap-event-mesh)
+
 
