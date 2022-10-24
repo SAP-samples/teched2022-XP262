@@ -8,7 +8,7 @@ This repository contains the material for the SAP TechEd 2022 session called **X
 
 This session introduces attendees into the general concepts of building extensions for SAP systems (like SAP S/4HANA, SAP SuccessFactors and alike) with the help of SAP Business Technology Platform (SAP BTP). Instead of building our own extension app, we will take a different approach in this advanced session: Understanding an already existing and running app, diving into the most important aspects of such an app and setting the foundation for more complex scenarios. 
 
-The Discovery Center Mission *Enhance core ERP business processes with resilient applications on SAP BTP* serves as the foundation for this session. This session will cover the foundation of this architecture.
+The Discovery Center Mission [*Enhance core ERP business processes with resilient applications on SAP BTP*](https://discovery-center.cloud.sap/missiondetail/3501/3542/) serves as the foundation for this session. This session will cover the foundation of this architecture.
 
 ![Highlevel Architecture](exercises/ex1/images/highlevel-arch.png)
 
