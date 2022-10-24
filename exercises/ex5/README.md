@@ -164,5 +164,13 @@ In this case, each student has a destination that points to the same source syst
 
 Furthermore, this exercise is intended to demonstrate that the application can access source systems via various connection types without requiring any coding changes. You only restarted the application, which is not always mandatory.
 
+---
+
+Further Links: 
+
+* [What is the SAP Private Link Service? (help.sap.com)](https://help.sap.com/docs/PRIVATE_LINK/42acd88cb4134ba2a7d3e0e62c9fe6cf/3eb3bc7aa5db4b5da9dcdbf8ee478e52.html) 
+* [Blog Posts for SAP Private Link Service (blogs.sap.com)](https://blogs.sap.com/tag/sap-private-link-service/)
+* [Connect SAP Link Service to Microsoft Azure Private Link Service](https://developers.sap.com/mission.private-link-connect.html)
+
 
 
