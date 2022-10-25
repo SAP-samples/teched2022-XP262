@@ -24,6 +24,7 @@ There's different administration tools for SAP HANA Cloud. May it be [Database E
 1. Navigate to the SAP HANA Database Explorer. 
 
     👉 Go to your SAP BTP subaccount overview and open the **dev** space.
+    
     👉 Select **SAP HANA Cloud**. Open the **Actions** dropdown of the SAP HANA Cloud instance *XP262hana* and open the **SAP HANA Database Explorer**. 
     ![Open the SAP HANA Database Explorer](images/hana_dbexplorer.png)
 
@@ -62,7 +63,7 @@ There's a not a lot of content available in your HDI Container, basically just s
 
 2. 👉 Double-click the **Views** item and make yourself familiar with the individual Views. By selecting one of the Views, the Columns information and alike will appear on the right. Basically all the entities have a corresponding View, since they are exposed via the *AdminService* (SourceCode: <https://github.com/SAP-samples/btp-build-resilient-apps/blob/extension/srv/catalog.cds#L8-L22>)
    
-## Exercise 3.4 Change a business partner and check the updates in SAP S/4HANA and the HDI Container (extension field vs. S4 fields)
+## Exercise 4.4 Change a business partner and check the updates in SAP S/4HANA and the HDI Container (extension field vs. S4 fields)
 
 Now that you have access to the tables, we'll see all of the processing once again in action. 
 
