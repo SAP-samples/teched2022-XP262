@@ -6,22 +6,22 @@ This repository contains the material for the SAP TechEd 2022 session called **X
 
 ## Overview
 
-This session introduces attendees into the general concepts of building extensions for SAP systems (like SAP S/4HANA, SAP SuccessFactors and alike) with the help of SAP Business Technology Platform (SAP BTP). Instead of building our own extension app, we will take a different approach in this advanced session: Understanding an already existing and running app, diving into the most important aspects of such an app and setting the foundation for more complex scenarios. 
+This session introduces attendees to the general concepts of building extensions for SAP systems (like SAP S/4HANA, SAP SuccessFactors and the like) with the help of SAP Business Technology Platform (SAP BTP). Instead of building our own extension app, we will take a different approach in this advanced session: Understanding an app that already exists and is running, diving into the most important aspects of such an app and setting the foundation for more complex scenarios. 
 
-The Discovery Center Mission [*Enhance core ERP business processes with resilient applications on SAP BTP*](https://discovery-center.cloud.sap/missiondetail/3501/3542/) serves as the foundation for this session. This session will cover the foundation of this architecture.
+The Discovery Center Mission [*Enhance core ERP business processes with resilient applications on SAP BTP*](https://discovery-center.cloud.sap/missiondetail/3501/3542/) serves as the foundation for this session. This session will cover the foundation of its architecture.
 
 ![Highlevel Architecture](exercises/ex1/images/highlevel-arch.png)
 
 
 ## Requirements
 
-There are no requirements for this session other than a browser (preferrably Google Chrome). Unfortunately, since the entire environment is already prepared for attendees including the SAP S/4HANA on premise system, this exercises can only be done on-site at SAP TechEd 2022 in Las Vegas. 
+There are no requirements for this session other than a browser (preferrably Google Chrome). Unfortunately, since the entire environment is already prepared for attendees including the SAP S/4HANA on premise system, these exercises can only be done on-site at SAP TechEd 2022 in Las Vegas. 
 
 ## Procedure
 
-If you complete an exercise early, please resist the urge to go on to the next one. Instead, investigate what you've just done and see if you can learn more about the subject that was presented. That way, we can avoid having to answer every question several times and really ensure that all questions can be raised.
+If you complete an exercise early, please resist the urge to go on to the next one. Instead, investigate what you've just done and see if you can learn more about the subject that was presented. That way, we can avoid having to answer every question several times and really ensure that all questions can be addressed.
 
-**IMPORTANT:** The instructions in the following exercises contain more than just the actual steps you have to do. To not get confused, we have highlighted the steps where you actually have to do something with this pointer: 👉. Everything else is intented to provide more background information
+**IMPORTANT:** The instructions in the following exercises contain more than just the actual steps you have to do. To not get confused, we have highlighted the steps where you actually have to do something with this pointer: 👉. Everything else is intented to provide more background information.
 
 ## Exercises
 
