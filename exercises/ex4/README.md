@@ -30,12 +30,6 @@ There's different administration tools for SAP HANA Cloud. May it be [Database E
 
     **IMPORTANT**: There's a bug right now. The links in SAP BTP Cockpit (and SAP HANA Cloud Central are wrong), please open the SAP HANA Database Explorer directly using this link: <https://hana-cockpit.cfapps.us20.hana.ondemand.com/hrtt/sap/hana/cst/catalog/cockpit-index.html>
 
-     👉 In case you will be asked for authentication, enter the following origin key (***tdcteched1-platform***) from the identity provider and sign in with alternative identity provider 
-
-     ***Origin Key: tdcteched1-platform***
-
-     ![Kibana sign in](./images/cc-11.png)
-
 2. Your SAP HANA Database Explorer will look fairly empty, since you haven't connected to any database or HDI Container. 
     
     👉 Hit the **+** icon to add a new connection. 
