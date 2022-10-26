@@ -6,9 +6,9 @@ There are only two accounts that you need in the entire session. Both of them ar
 
 
 --- 
-**IMPORTANT**: A so-called student number has been given to you. You will repeatedly see the placeholder **STUDENT>** throughout the entire session. Please replace this placeholder with your own student number whenever it's needed.
+**IMPORTANT**: A so-called student number has been given to you. You will repeatedly see the placeholder **\<STUDENT>** throughout the entire session. Please replace this placeholder with your own student number whenever it's needed.
 
-For instance: Student number 37 has been given to you. You receive the following task in one of the exercises: "*Please filter for BPVerification-srv-STUDENT>*."
+For instance: Student number 37 has been given to you. You receive the following task in one of the exercises: "*Please filter for BPVerification-srv-\<STUDENT>*."
 Therefore, you would have to filter BPVerification-srv-37.
 
 **IMPORTANT**: We will sometimes provide links to the source code of artifacts that you are going to use. This is for additional information only. You don't have to develop anything, customize code or deploy any MTAs in this session. These links are therefore purely informative additional information and are by no means action items for you!
