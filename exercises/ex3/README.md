@@ -92,6 +92,7 @@ In the next exercise, we'll cover the data persistency for this application - th
 
 Continue to - [Exercise 4](../ex4/README.md)
 
+---
 
 Further Links: 
 
