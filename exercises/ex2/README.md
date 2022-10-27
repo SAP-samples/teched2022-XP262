@@ -116,6 +116,8 @@ In short:
 3) Call the OData API for business partners of the SAP S/4HANA system (using a Destination on SAP BTP, no matter if the system is connected via SAP Cloud Connector or SAP Private Link - more about that in a subsequent exercise)
 4) Process the business partner data and save it in the HDI Container on SAP HANA Cloud. 
 
+> here's the corresponding coding, in case you are interested: [GitHub](https://github.com/SAP-samples/btp-build-resilient-apps/blob/extension/srv/catalog.js#L26-L49)
+
 
 ## Exercise 2.5 Start your application and the event consumption 
 
@@ -159,14 +161,13 @@ Now that you have seen what data the CAP application will actually receive once 
     👉 Try to also block the business partner in SAP S/4HANA.
     [Update the recently created business partner](./images/update_bp2.png)
 
-    Here's the corresponding coding: [GitHub](https://github.com/SAP-samples/btp-build-resilient-apps/blob/extension/srv/catalog.js#L75-L89)
+    > here's the corresponding coding, in case you are interested: [GitHub](https://github.com/SAP-samples/btp-build-resilient-apps/blob/extension/srv/catalog.js#L26-L49)
 
     The changes will now be sent to the SAP S/4HANA system using your Destination (of type SAP Cloud Connector so far). The field **Verification Status** is not available in the SAP S/4HANA system and only important for our application. That's why it's only persisted in the tables of our application in the HDI Container on SAP HANA Cloud.
 
-    > If you are interested in the coding for blocking/unblocking business partners in SAP S/4HANA [GitHub](https://github.com/SAP-samples/btp-build-resilient-apps/blob/extension/srv/catalog.js#L75-L143)
-    > If you are interested in the coding for updating business partners in SAP S/4HANA: [GitHub](https://github.com/SAP-samples/btp-build-resilient-apps/blob/extension/srv/catalog.js#L48-L73)
+    > If you are interested in the coding for blocking/unblocking business partners in SAP S/4HANA [GitHub](> here's the corresponding coding, in case you are interested: [GitHub](https://github.com/SAP-samples/btp-build-resilient-apps/blob/extension/srv/catalog.js#L26-L49)
+    > If you are interested in the coding for updating business partners in SAP S/4HANA: [GitHub](https://github.com/SAP-samples/btp-build-resilient-apps/blob/extension/srv/catalog.js#L51-L69)
     
-    Here's the corresponding coding: [GitHub](https://github.com/SAP-samples/btp-build-resilient-apps/blob/extension/srv/catalog.js#L50-L69)
 
 5. Go back to the SAP S/4HANA system and check if your changes were succesful. 
    👉 Open the known transaction for business partners (Transaction Code **BP** or the entry in your user menu), enter the Business Partner ID, select **Start** and double-click on the resulting entry to open the business partner details.

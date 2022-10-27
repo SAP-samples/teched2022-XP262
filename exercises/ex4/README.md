@@ -99,3 +99,11 @@ Next, you are going to have a look at one of the key elements in extension scena
 
 Continue to - [Exercise 5](../ex5/README.md)
 
+---
+
+Further Links: 
+
+* [What are HDI Containers? (help.sap.com)](https://help.sap.com/docs/HANA_CLOUD_DATABASE/b9902c314aef4afb8f7a29bf8c5b37b3/e28abca91a004683845805efc2bf967c.html?version=2021_4_QRC) 
+* [Blog Posts for SAP HANA Cloud (blogs.sap.com)](https://blogs.sap.com/tags/73554900100800002881/)
+* [Combine CAP with SAP HANA Cloud to Create Full-Stack Applications](https://developers.sap.com/mission.hana-cloud-cap.html)
+
