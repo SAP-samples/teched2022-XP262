@@ -6,9 +6,9 @@ There are only two accounts that you need in the entire session. Both of them ar
 
 
 --- 
-**IMPORTANT**: A so-called student number has been given to you. You will repeatedly see the placeholder **STUDENT>** throughout the entire session. Please replace this placeholder with your own student number whenever it's needed.
+**IMPORTANT**: A so-called student number has been given to you. You will repeatedly see the placeholder **\<STUDENT>** throughout the entire session. Please replace this placeholder with your own student number whenever it's needed.
 
-For instance: Student number 37 has been given to you. You receive the following task in one of the exercises: "*Please filter for BPVerification-srv-STUDENT>*."
+For instance: Student number 37 has been given to you. You receive the following task in one of the exercises: "*Please filter for BPVerification-srv-\<STUDENT>*."
 Therefore, you would have to filter BPVerification-srv-37.
 
 **IMPORTANT**: We will sometimes provide links to the source code of artifacts that you are going to use. This is for additional information only. You don't have to develop anything, customize code or deploy any MTAs in this session. These links are therefore purely informative additional information and are by no means action items for you!
@@ -20,7 +20,7 @@ The _source system_ so to speak for our extension application is an SAP S/4HANA 
 
 1. 👉 Log on to the SAP S/4HANA on-premise system using the SAPGUI on your Desktop. Therefore, open **SAP Logon** on your Desktop. 
 
-2. 👉 Select the system with SID **S4H** from the list of available systems. 
+2. 👉 Double-click the system with SID **S4H** from the list of available systems. 
 
     ![List of available systems](./images/sap_logon.png)
 
@@ -41,7 +41,7 @@ The _source system_ so to speak for our extension application is an SAP S/4HANA 
 
 Of course, you will also receive a user for SAP Business Technology Platform in order to be able to access your very own existing extension application and the corresponding services of this scenario. 
 
-1. There are a few tool options that we have in order to walk you through this session and the takeways that we want to tackle. It could either be the Cloud Foundry CLI/SAPBTP CLI(either on the machines commandline/terminal or SAP Business Application Studio) or the SAP BTP Cockpit. We try to keep tools/and the potential hurdles at a minimum level in order to focus on the key aspects - understanding and getting in touch with the architecture - of the extension application. That's why we are going to use the SAP BTP Cockpit throughout this session.
+1. There are a few tool options that we have in order to walk you through this session and the takeways that we want to tackle. It could either be the Cloud Foundry CLI or SAP BTP CLI (either on the machine's commandline/terminal or SAP Business Application Studio) or the SAP BTP Cockpit. We try to keep the tools used and the potential hurdles at a minimum in order to focus on the key aspects - understanding and getting familiar with the architecture - of the extension application. That's why we are going to use the SAP BTP Cockpit throughout this session.
 
     👉 Open the SAP BTP Cockpit: <https://cockpit.eu10.hana.ondemand.com/cockpit/?idp=tdcteched1.accounts.ondemand.com#/globalaccount/fb7dfea1-5d8c-431d-bd16-1ebbe842f62f/subaccount/145b0547-19d3-4d89-9b81-e55ed8d5f1db>
 
@@ -52,11 +52,11 @@ Of course, you will also receive a user for SAP Business Technology Platform in 
 
     ![SAP BTP Logon screen](./images/btp_logon.png)
 
-2. This page will be needed throughout this whole session and we'll further on reference this page as **SAP BTP subaccount overview**. 
+2. This page will be needed throughout this whole session and we'll further reference this page as **SAP BTP subaccount overview**. 
 
     👉 Bookmark this page as in your browser so you can easily come back later on.
 
-3. Let's have a look at a few menu items to proof that you have all the required RoleCollections. 
+3. Let's have a look at a few menu items to prove that you have all the required Role Collections assigned. 
 
     👉 Go to **Services > Instances & Subscriptions**. You should see a list with service instances and subscriptions that your SAP TechEd instructors have been created before. If you have issues seing this list, please reach out to one of the instructors. 
 
@@ -75,5 +75,5 @@ Of course, you will also receive a user for SAP Business Technology Platform in 
     Here, for example, you get an overview of the applications that have been deployed in this Cloud Foundry space. There is an application for each participant that is only intended for the respective participant. Each app has its own front end with its own URL (SAP Fiori Elements application), its own backend (CAP application) and its own HDI container in SAP HANA Cloud. The only thing you share with all participants is the SAP S/4HANA system, even if you have been given your very own user for it. But more about that later. 
 ## Summary
 
-Now that you have tested both required accounts, you should be well equipped to see the extension application in action. In the next step, you'll get to know the SAP BTP artefacts that your insctructors have already deployed for each student. 
+Now that you have tested both required accounts, you should be well equipped to see the extension application in action. In the next step, you'll get to know the SAP BTP artifacts that your insctructors have already deployed for each student. 
 Continue to - [Exercise 1 - Exercise 1](../ex1/README.md)
