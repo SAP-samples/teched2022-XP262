@@ -1,14 +1,12 @@
 # Exercise 2 - Explore SAP Event Mesh in action 
 
-In many cases, typical extension applications for any LoB system today are based on event-driven architectures. An event-driven architecture, which is popular in modern applications built with microservices, uses events to trigger and communicate across decoupled services. An event is a status change or an update, such as a new created or update Business Partner. 
+In many cases, typical extension applications for an LoB system are based on event-driven architectures. An event-driven architecture, which is popular in modern applications built with microservices, uses events to trigger and communicate across decoupled services. An event is a status change or an update, such as a newly created or updated Business Partner. 
 
-Event-Driven architectures usually consists of three components: 
+Event-Driven architectures usually consist of three components: 
 
 - **An event producer:** In this case the SAP S/4HANA system 
 - **An event broker:** In this case the SAP Event Mesh service on SAP BTP
 - **An event consumer:** The CAP (SAP Cloud Application Programming Model) Node.js application deployed to SAP BTP, Cloud Foundry runtime
-
-If you want to learn more about the general concepts of SAP Event Mesh: 
 
 [Learn more about the general messaging concepts of SAP Event Mesh on developers.sap.com](https://developers.sap.com/tutorials/cp-enterprisemessaging-learn-messaging-concepts.html)
 
