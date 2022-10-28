@@ -21,16 +21,15 @@ For more details please see the SAP Cloud Connector [documentation](https://help
 
 ## SAP Private Link service
 
-SAP Private Link Service service allows to securely connect applications running on SAP BTP to workloads running on hyperscalers. This ensures that traffic is not routed through the public internet but stays within the hyperscaler infrastructure. This helps to minimize attack vectors and ensured secure communication between SAP BTP and hyperscaler workload.
+SAP Private Link Service service allows to securely connect applications running on SAP BTP to workloads running on hyperscalers. This ensures that traffic is not routed through the public internet but stays within the hyperscaler infrastructure. This helps to minimize attack vectors and ensures secure communication between SAP BTP and hyperscaler workload.
 
-Having SAP Private Link service in place will not require any more to expose the systems and communication through the internet and the whole traffic is secured by an internal hyperscaler network without any exposure.
+Having SAP Private Link service in place will no longer require you to expose the systems and communication through the internet and keeps all traffic  secured by an internal hyperscaler network.
 
 ![SAP Private Link service](./images/privatelink.png)
 
 For more details about supported hyperscalers and services please see the SAP Private Link service [documentation](https://help.sap.com/docs/PRIVATE_LINK/42acd88cb4134ba2a7d3e0e62c9fe6cf/3eb3bc7aa5db4b5da9dcdbf8ee478e52.html?locale=en-US) 
 
-
->NOTE, both options offer advantages of their own. In some scenarios it is also worth to combine the best of both worlds and have a “third configuration option”
+> NOTE, both options offer advantages of their own. In some scenarios it is also worth combining the best of both worlds to have a “third configuration option”
 
 Please take a look at the following [blog post](https://blogs.sap.com/2022/07/07/btp-private-linky-swear-with-azure-running-cloud-connector-and-sap-private-link-side-by-side/) if you are interested in comparing the two approaches.
 
@@ -48,13 +47,13 @@ By default, the application in this exercise is configured to connect via SAP Cl
 
 2. 👉 Navigate to the **Destinations** menu in the **Connectivity** section.  
    
-   You will find a destination called **BusinessPartner-STUDENT>** that provides remote communication information. The previously defined virtual host is defined as the URL and the _OnPremise_ proxy type is chosen as a connection option. *OnPremise* indicates to the consuming Toll/Service/SDK that the specified URL must first be resolved using the Connectivity Service. The virtual host can only be resolved using the Connectivity Service and only within the SAP BTP network!  
+   You will find a destination called **BusinessPartner-STUDENT>** that provides remote communication information. The previously defined virtual host is defined as the URL and the _OnPremise_ proxy type is chosen as a connection option. *OnPremise* indicates to the consuming Tool/Service/SDK that the specified URL must first be resolved using the Connectivity Service. The virtual host can only be resolved using the Connectivity Service and only within the SAP BTP network!  
    
    👉 Check the communication to the SAP S/4HANA system by clicking **Check Connection**.
    
    ![Destination](./images/cc-2.png)
 
-3. Check the current connection details in the Kibana dashboard. The application coding contains log outputs to log the Destination type that is being used to connect to the SAP S/4HANA system. The OData APIs to read from SAP S/4HANA are only called whenever an event (business partner created or changed) on the corresponding SAP Event Mesh Queue comes in, so that happened already a couple of times.  
+3. Check the current connection details in the Kibana dashboard. The application coding contains log outputs to write the Destination type that is being used to connect to the SAP S/4HANA system. The OData APIs to read from SAP S/4HANA are only called when an event (business partner created or changed) on the corresponding SAP Event Mesh Queue comes in, so that happened already a couple of times.  
 
    👉 Open the **Kibana dashboard** that you have bookmarked in [exercise 03](../ex3/README.md).
 
@@ -76,11 +75,11 @@ By default, the application in this exercise is configured to connect via SAP Cl
 
 ## Exercise 5.2 Connectivity with SAP Private Link service
 
-In this example, you are going to use the SAP Private Link service to communicate with an SAP S/4HANA system running on Microsoft Azure instead of the SAP Cloud Connector (as it is until now). The essential procedures to build the appropriate service instances have already been completed for the sake of time, simplicity, and security.
+In this example, you are going to use the SAP Private Link service to communicate with an SAP S/4HANA system running on Microsoft Azure instead of the SAP Cloud Connector (as it has until now). The essential procedures to build the appropriate service instances have already been completed for the sake of time, simplicity, and security.
 
 This connection can be established by creating an Azure Private Link service that exposes a load balancer that routes traffic to the SAP S/4HANA system. This Azure Private Link service must then be used as the resource to which the SAP Private Link service connects. As soon as the connection is established successfully, the SAP Private Link service provides private DNS hostnames pointing to the Azure Private Link service.
 
-Having SAP Private Link service in place will not require any more to expose the systems and communication through the internet and the whole traffic is secured by an internal hyperscaler network without any exposure.
+As mentioned above, having the SAP Private Link service in place secures all network traffic and keeps it off of the public internet.
 
 ![Azure Private Link](./images/plink-1.png)
 
@@ -130,7 +129,7 @@ If you're curious about the steps involved of this scenario in setting up a Priv
 
 6. **Save** the destination.
 
-   > Note: If TrustAll is set to TRUE in the destination, the server certificate will not be checked for SSL connections. It is intended for test scenarios only, and should not be used in production (the server certificate will not be checked and you will not notice MITM attacks).
+   > Note: If TrustAll is set to TRUE in the destination, the server certificate will not be checked for SSL connections. It is intended for test scenarios only, and should not be used in production (the server certificate will not be checked and you will not notice man in the middle or MITM attacks).
 
    > If you're interested in learning more about how to set up end-to-end SSL, you can check the details in the following [repository](https://github.com/SAP-samples/btp-build-resilient-apps/blob/extension-privatelink/tutorials/05-PrivateLink/README.md#setup-end-to-end-ssl).
 
@@ -143,7 +142,7 @@ If you're curious about the steps involved of this scenario in setting up a Priv
 
 7. To verify that the CAP application is now calling SAP S/4HANA OData APIs using the Private Link connection, you first need to create a new business partner. (The CAP application will react on the resulting message on SAP Event Mesh and calls the SAP S/4HANA OData APIs to receive the required data for the business partner ID as part of the received message. 
 
-   👉 Go the SAP S/4HANA system and create another business partner. Make sure to provide a First Name, Last Name (**\<STUDENT>**) and an Address, similarly to the business partners you have created in the previous steps and exercises.
+   👉 Go the SAP S/4HANA system and create another business partner. Make sure to provide a First Name, Last Name (**\<STUDENT>**) and an Address, similar to the business partners you have created in the previous steps and exercises.
 
    👉 Refresh the Kibana dashboard that is (hopefully) still open in a separate browser tab.
    ![Refresh the kibana results](./images/kibana_refresh.png)
@@ -156,7 +155,7 @@ If you're curious about the steps involved of this scenario in setting up a Priv
 
 ## Summary
 
-Well done; with this knowledge, you should be able to establish a connection to an on-premises SAP S/4HANA system using any of the several connectivity methods provided by the SAP Business Technology Platform.
+Well done! With this knowledge, you should be able to establish a connection to an on-premise SAP S/4HANA system using any of the several connectivity methods provided by the SAP Business Technology Platform.
 
 This exercise, in addition to demonstrating the new connection type "PrivateLInk," is intended to demonstrate how powerful destinations are on SAP BTP. They serve as a central repository for connection information.
 
