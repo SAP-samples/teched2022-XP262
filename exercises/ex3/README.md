@@ -1,10 +1,10 @@
 # Exercise 3 - Logging and Monitoring capabilities of SAP BTP with Application Logging service
 
-As long as your application works properly... but what if that isn't the case?
+Logging and monitoring are often overlooked when your application is operating correctly ... but what if that isn't the case?
 
 SAP Business Technology uses the Application Logging service to provide developers and administrators with not only CLI access to log output but also a Kibana dashboard for logging and monitoring purposes.
 
-When something goes wrong with an application, developers usually use the Cloud Foundry CLI to directly analyze the log output. However, because you cannot filter or similar, the data is unstructured and massive. The SAP BTP Kibana dashboard offers numerous ways to gain insights into your SAP BTP applications.
+When something goes wrong with an application, developers usually use the Cloud Foundry CLI to directly analyze the log output. However, because you cannot filter or search, the data is unstructured and unwieldy. The SAP BTP Kibana dashboard offers numerous ways to gain insights into your SAP BTP applications.
 
 Logging and monitoring are crucial parts of cloud native architectures. Applications on the SAP BTP, Cloud Foundry runtime, such as yours in this session, are not exempt from this. As a result, we'd like to look at the Application Logging Service for SAP BTP, which allows us to use the pre-configured ELK stack (Elastic Search, Logstash, Kibana) with only one additional service binding. However, the Application Logging Service for SAP BTP is far from the only solution for logging and monitoring SAP BTP artifacts: *[DevOps with SAP BTP: Monitor & Operate](https://blogs.sap.com/2020/01/13/devops-with-sap-cloud-platform-monitor-operate/comment-page-1/#comment-634567)
 
@@ -18,13 +18,13 @@ Logging and monitoring are crucial parts of cloud native architectures. Applicat
 
   👉 Navigate to **Logs** in the side menu. 
 
-![Selec the Open Kibana dasboard button](./images/open_kibana.png)
+![Select the Open Kibana dasboard button](./images/open_kibana.png)
 
   👉 **Open Kibana Dashboard**. 
 
- > The logs on this page are a good place to start because they are more structured than the log output from the Cloud Foundry CLI. You could already begin your exploratory searches.. But that is not the focus of this discussion.
+ > The logs on this page are a good place to start because they are more structured than the log output from the Cloud Foundry CLI. You could already begin your exploratory searches.. But that is not the focus of this exercise.
 
-  👉 In case you will be asked for authentication, enter the following origin key (***tdcteched1-platform***) from the identity provider and sign in with alternative identity provider 
+  👉 In case you are asked for authentication, enter the following origin key (***tdcteched1-platform***) from the identity provider and sign in with alternative identity provider. 
 
   ***Origin Key: tdcteched1-platform***
 
@@ -48,20 +48,21 @@ The initial dasbhoard contains a lot of information that you might not be intere
 
   ![Change the date filter ](./images/date_filter.png)
 
-This filter will remain active throughout your browsing session; meanwhile, you can remove it at any time.
+This filter will remain active throughout your browsing session but you can remove it at any time.
 
 4. Let's first a look at the actual log output of your application before you can explore some monitoring visualisations and insights yourself. 
 
   👉 Navigate to the **Request and Logs** tab.
 
-5. Let's try out a few different things with the logs. Let's see, how many newly created Business Partners your application has processed today.
+5. Let's try out a few different things with the logs. Let's see how many newly created Business Partners your application has processed today.
 
   👉 Add a new filter by clicking **Add filter** next to the component name filter you just added. Choose **msg** as the field name, Operator **is** as the operator, and enter **event caught** as the field value.
 
   ![Add msg filter](./images/add_msg_filter.png)
+  
   ![Output for application logs that contain "event caught" in their msg](./images/app_logs_events_caught.png)
 
-  his should give you a good idea, for example, when your application has been started and bulk-processed all the events in your SAP Event Mesh Queue. All of the events also contain business partners created by others in the SAP S/4HANA system.
+  This should give you a good idea, for example, when your application has been started and bulk-processed all the events in your SAP Event Mesh Queue. All of the events also contain business partners created by others in the SAP S/4HANA system.
 
   👉 Change the **msg* filter you have just created and adjust the value entry to one of the business partners you have created. That way you can follow along how which operations (processing event, reading from SAP S/4HANA through SAP Cloud Connector, updating table in HDI Container on SAP HANA Cloud) have been made for a single business partner. 
 
@@ -71,9 +72,9 @@ This filter will remain active throughout your browsing session; meanwhile, you 
 
 7. Fun task: Find out who is thoroughly reading the exercises and who is just rushing through. How? Simply remove the *component name* filter to see when the business partner you're looking for was processed first and last. The application logs list will tell you the student number (as part of the component name in the list)
 
-  > Tip: Make your *msg* filter more specific by filtering only for *BusinessPartnerCreated event captured BusinessPartnerID>*.
+  > Tip: Make your *msg* filter more specific by filtering only for *BusinessPartnerCreated event captured BusinessPartnerID*.
 
-8. If there is still time for this task, dedicate the remainder of your time to it and explore the other tabs in Kibana. These tabs give further information about the Kibana's monitoring capabilities.
+8. If there is still time for this task, dedicate the remainder to exploring the other tabs in Kibana. These tabs give further information about Kibana's monitoring capabilities.
 
 Kibana displays a set of pre-built dashboards that help you analyze your application, as follows:
 
@@ -86,7 +87,7 @@ Kibana displays a set of pre-built dashboards that help you analyze your applica
 
 ## Summary
 
-You've now hopefully gotten a more detailed understanding of how your application behaves and get a better overview and concrete information, when events have been consumed from the Queue or how CAP checks the need for SAP Event Mesh Queues/Subscriptions. 
+You've now hopefully gotten a more detailed understanding of how your application behaves and have a better overview, with concrete information, about when events have been consumed from the Queue or how CAP checks the need for SAP Event Mesh Queues/Subscriptions. 
 
 In the next exercise, we'll cover the data persistency for this application - the HDI Container on SAP HANA Cloud. 
 
