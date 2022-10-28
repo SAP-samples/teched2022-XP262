@@ -155,7 +155,8 @@ Now that you have seen what data the CAP application will actually receive once 
     ![Update the recently created business partner](./images/update_bp2.png)
 
     👉 Try to also block the business partner in SAP S/4HANA.
-    [Update the recently created business partner](./images/update_bp2.png)
+    
+    ![Update the recently created business partner](./images/block_bp.png)
 
     Here's the corresponding coding: [GitHub](https://github.com/SAP-samples/btp-build-resilient-apps/blob/extension/srv/catalog.js#L75-L89)
 
