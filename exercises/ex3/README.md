@@ -92,3 +92,10 @@ You've now hopefully gotten a more detailed understanding of how your applicatio
 In the next exercise, we'll cover the data persistency for this application - the HDI Container on SAP HANA Cloud. 
 
 Continue to - [Exercise 4](../ex4/README.md)
+
+---
+
+Further Links: 
+
+* [What is SAP Application Logging Service? (help.sap.com)](https://help.sap.com/docs/APPLICATION_LOGGING/ee8e8a203e024bbb8c8c2d03fce527dc/3da50b904a314eed8c5daa671d12b647.html?locale=en-US) 
+* [DevOps with SAP BTP: Monitor & Operate (blogs.sap.com)](https://blogs.sap.com/tags/73554900100800002881/)

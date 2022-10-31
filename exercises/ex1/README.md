@@ -115,6 +115,12 @@ Nice! Now that you roughly know how the frontend (SAP Fiori application) and the
 Continue to - [Exercise 2](../ex2/README.md)
 
 
+Further Links: 
+
+* [GitHub repository to this scenario (github.com)](https://github.com/SAP-samples/btp-build-resilient-apps) 
+* [Discovery Center mission to this scenario (discovery-center.cloud.sap)](https://discovery-center.cloud.sap/missiondetail/3501/3542/)
+
+
 
 
 
