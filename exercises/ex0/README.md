@@ -76,7 +76,7 @@ Of course, you will also receive a user for SAP Business Technology Platform in 
 
     The default view for a selected Cloud Foundry space is the **Applications** view, which presents an overview of the applications that have been deployed to that Cloud Foundry space. 
 
-    There is an application for each student, identified by the student number in the application name. Use only your own application, do not use anyone else's. Each app has its own front end with its own URL (SAP Fiori Elements application), its own backend (CAP application) and its own HDI container in SAP HANA Cloud. 
+    There is an application for each student, identified by the student number in the application name. Use only your own application, do not use anyone else's. Each app has its own frontend end with its own URL (SAP Fiori Elements application), its own backend (CAP application) and its own HDI container in SAP HANA Cloud. 
 
     The only thing you share with all students is the SAP S/4HANA system, even if you have been given your very own user for it. But more about that later. 
 ## Summary
