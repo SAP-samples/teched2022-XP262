@@ -2,18 +2,19 @@
 
 You will work with an existing extension application to a process in an SAP S/4HANA system as part of this session to better understand the concepts behind it and be prepared for more advanced scenarios.
 
-Before we set out to understand the actual logic behind the extension app on SAP BTP, you will first get to know your artifacts that are meant only for you. Each participant has the following artifacts in this session, which are only meant for them: 
+Before we set out to understand the actual logic in the extension app on SAP BTP, you will first get to know your artifacts that are meant only for you. Each student has their own instances of following artifacts in this session:
 
 - A custom SAP Fiori application (frontend application) in the HTML5 application repository.
-- A Node.js application built with the help of SAP Cloud Application programming (CAP) model (backend application)
+- A Node.js application built with the help of SAP Cloud Application programming (CAP) model (backend application).
 - A separate HDI container that stores only the data processed by the corresponding frontend and backend.
 - A separate SAP Event Mesh Queue, which ensures that each participant receives dedicated events from the SAP S/4HANA on-premise system. 
 
 Those artifacts have your personal student number in the service/application name.
 
-Now over to the fictional business scenario: John is an employee of Business Partner Validation Firm iCredible, which is a third-party vendor of ACME Corporation, and would like to get notifications whenever Business Partners are created/updated in the SAP S/4HANA backend system of ACME Corporation. John would then be able to review the Business Partner details in his extension app on the SAP Business Technology Platform. He would proceed to visit the Business Partner’s registered office and do some background verification. John would then proceed to update/validate the verification details using the extension app
+Now over to the fictional business scenario: John is an employee of Business Partner Validation Firm iCredible, which is a third-party vendor of ACME Corporation. John would like to get notifications whenever Business Partners are created/updated in ACME Corporation's SAP S/4HANA backend system. He would then be able to review the Business Partner details in his extension app on the SAP Business Technology Platform. He would proceed to visit the Business Partner’s registered office and do some background verification. John would then update/validate the verification details using the extension app.
 
 The high level architecture is as follows: 
+
     ![High Level Architecture diagramm](images/highlevel-arch.png)
 
 > Some components (such as Autoscaler Service, SAP Alert Notification service, Continuous Integration & Delivery (CI/CD), and SAP Cloud Transport Management service) have not been implemented in the system for the sake of simplicity for this session, but exist in this case only on the architecture depiction. 
@@ -23,14 +24,16 @@ The high level architecture is as follows:
 1. The SAP Fiori application has already been deployed to the SAP HTML5 Application Repository for SAP BTP and is connected to your specific CAP application. 
 
     👉 Return to the SAP BTP subaccount overview (which you should have bookmarked in the previous exercise) and select **HTML5 Applications**.
+
     ![Open HTML5 apps menu](./images/html5-menu.png)
 
 2. 👉 Click on the application with your student number. 
    
     > e.g. If your student number is 01, please select techedbusinesspartners1. 
+
     ![Open your html5 app menu](./images/listhtml5apps.png) 
 
-3. A new browser tab will open, displaying a tile on a SAP Fiori Launchpad with a SAP Fiori application. This application displays data from your HDI Container on SAP HANA Cloud, as served by your own CAP application.
+3. A new browser tab will open, displaying a tile on an SAP Fiori Launchpad with an SAP Fiori application. This application displays data from your HDI Container on SAP HANA Cloud, as served by your own CAP application.
    
     👉 Select the tile to open the SAP Fiori application. 
     ![SAP Fiori Launchpad with one app](./images/html5-launchpad.png) 
