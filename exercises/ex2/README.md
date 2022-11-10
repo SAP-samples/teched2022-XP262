@@ -132,13 +132,12 @@ Now that you have seen what data the CAP application will actually receive once 
 
     👉 Wait a few seconds (or come back after you have done the next step) to check if the application was succesfully started.
 
-2. Check the SAP Fiori frontend to see if your new business partner (and business partners of other students) has been processed and is listed in the application.
+2. Check the SAP Fiori frontend to see if new business partners (incl. business partners of other students) have been processed and are listed in the application.
    
     👉 Go to the SAP BTP subaccount overview and open the corresponding application (techedbusinessparters\<STUDENT>) in the HTML5 Application Repository. 
     ![Navigate to the HTML5 apps menu](./images/html5apps_menu.png)
 
-    👉 Open the app, filter for the business partner (for instance, last name = \<STUDENT>) and select the corresponding entry to get to the details page. 
-    ![Filter for Last Name](./images/bp_filter.png)
+    👉 Open the only SAP Fiori tile to see the list of business partners that have been processed in your application. That means, the CAP application has picked up the messages in the Queue. (the Queue is only connected to your application but every application has it's own Queue, so all applications received all messages) Before the business partner data is persisted in SAP HANA Cloud, the CAP application calls the OData APIs for each business partner to retrieve the corresponding attributes. Calling the OData APIs is required since the message through SAP Event Mesh only contains the ID of the created/changed business partner and not the entire payload - that's the concept of **Notification Events**.
 
 3. You should now create another business partner in the SAP S/4HANA system to see that this business partner will immediately appear in the SAP Fiori application (after a refresh). 
    
