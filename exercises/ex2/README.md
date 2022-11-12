@@ -108,7 +108,7 @@ This is the message (pretty printed with whitespace for easier reading):
 ```
 > The format of the events follows the [CloudEvents specification](https://github.com/cloudevents/spec)
 
-You should see the header (everything except the *data* properties) and payload (the *data* property) of the message. It's not necessarily containing your business partner, since the consumption of messages is following the [FIFO](https://en.wikipedia.org/wiki/FIFO_(computing_and_electronics)) (first in first out) principle. You have just consumed the first business partner that has been created. As you can see, the payload only contains the ID of the object that has been affected. This type of events are called **Notification Events**. The format of the events is defined as 
+You should see the header (everything except the *data* property) and payload (the *data* property) of the message. It's not necessarily containing your business partner, since the consumption of messages is following the [FIFO](https://en.wikipedia.org/wiki/FIFO_(computing_and_electronics)) (first in first out) principle. You have just consumed the first business partner for which an event was created. As you can see, the payload only contains the ID of the object that has been affected. This type of events are called **Notification Events**. The format of the events is defined as 
 
 > *"Notification events are typically as small as possible and contain only the absolutely required information. The idea behind this type of event is that consumers are informed of a change and can then decide whether they care about this change or not. If the change isn’t relevant for the consumer, the consumer ignores the event completely. If the change is relevant for the consumer, the consumer will follow up by requesting additional data and executing on this data. Notification events have a number of advantages and have certain disadvantages as well:*
 >
@@ -125,7 +125,7 @@ You should see the header (everything except the *data* properties) and payload 
 In short: 
 
 1) The SAP CAP backend application would consume the message
-2) Take the ID of the business 
+2) Take the ID of the business partner
 3) Call the OData API for business partners of the SAP S/4HANA system (using a Destination on SAP BTP, no matter if the system is connected via SAP Cloud Connector or SAP Private Link - more about that in a subsequent exercise)
 4) Process the business partner data and save it in the HDI Container on SAP HANA Cloud. 
 
@@ -179,8 +179,7 @@ Now that you have seen what data the CAP application will actually receive once 
 
     The changes will now be sent to the SAP S/4HANA system using your Destination (of type SAP Cloud Connector so far). The field **Verification Status** is not available in the SAP S/4HANA system and only important for our application. That's why it's only persisted in the tables of our application in the HDI Container on SAP HANA Cloud.
 
-    > If you are interested in the coding for blocking/unblocking business partners in SAP S/4HANA [GitHub](> here's the corresponding coding, in case you are interested: [GitHub](https://github.com/SAP-samples/btp-build-resilient-apps/blob/extension/srv/catalog.js#L26-L49)
-    > If you are interested in the coding for updating business partners in SAP S/4HANA: [GitHub](https://github.com/SAP-samples/btp-build-resilient-apps/blob/extension/srv/catalog.js#L51-L69)
+    > If you are interested in the coding, blocking/unblocking business partners in SAP S/4HANA is done [here](https://github.com/SAP-samples/btp-build-resilient-apps/blob/extension/srv/catalog.js#L26-L49) and updating business partners in SAP S/4HANA is done [here](https://github.com/SAP-samples/btp-build-resilient-apps/blob/extension/srv/catalog.js#L51-L69).
 
 5. Go back to the SAP S/4HANA system and check if your changes were successful. 
    👉 Open the known transaction for business partners (Transaction Code **BP** or the entry in your user menu), enter the Business Partner ID, select **Start** and double-click on the resulting entry to open the business partner details.
