@@ -39,8 +39,6 @@ The fact that the CAP application has been deployed means the queue should have 
 
     👉 Select the **Actions** icon in the row of your Queue (on the very right) and open **Queue Subscriptions**.
 
-        ![Navigate to Queue Subscriptions](./images/student_queue.png)
-
     👉 You will see that your Queue is subscribed to the Topics that have been defined in the [CAP application](https://github.com/SAP-samples/btp-build-resilient-apps/blob/extension/srv/external-catalog.cds). 
 
         ![Display Queue Subscriptions](./images/display_subscriptions.png)
