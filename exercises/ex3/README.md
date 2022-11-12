@@ -32,7 +32,7 @@ Logging and monitoring are crucial parts of cloud native architectures. Applicat
 
 ## Exercise 3.2 Get used to filters 
 
-The initial dasbhoard contains a lot of information that you might not be interested in. Actually, it contains information for all Cloud Foundry organizations and spaces in a single Cloud Foundry region to which you have been assigned. (Regardless of subaccount) Since you're looking for your specific application, let's make sure you only get the relevant insights.
+The initial dasbhoard contains a lot of information that you might not be interested in. Actually, it contains information for all Cloud Foundry organizations and spaces in a single Cloud Foundry region to which you have been assigned. Since you're looking for your specific application, let's make sure you only get the relevant insights.
 
 1. 👉 Bookmark this page as **Kibana dashboard**. You are going to use this page in the further exercises as well. 
 
