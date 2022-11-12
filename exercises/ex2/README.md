@@ -23,6 +23,8 @@ SAP Event Mesh is a fully managed service on SAP BTP and offers a management das
 
 1. Each student's CAP application has already been deployed by SAP TechEd instructors. CAP checks whether Queues are required during application startup and, if so, whether they have already been created and connected to the application. In the service definition, for example, the [CDS declarations state that a Subscription to the Topic](https://github.com/SAP-samples/btp-build-resilient-apps/blob/extension/srv/external-catalog.cds) *tfe/bpem/em/ce/sap/s4/beh/businesspartner/v1/BusinessPartner/Created/v1* and *tfe/bpem/em/ce/sap/s4/beh/businesspartner/v1/BusinessPartner/Changed/v1* is required. If the Queue has not yet been created, CAP creates it with a combination of the application name and the application_id (that you noted down in the previous exercise) in its name. 
 
+> A combination of a Queue and a Topic is known as a Queue Subscription. See [Event Mesh Default Plan Concepts](https://help.sap.com/docs/SAP_EM/bf82e6b26456494cbdd197057c09979f/36485a71c98e4bb7ac942148ae6ebfad.html?locale=en-US) for more details.
+
     👉 Navigate to **Message Clients**. 
     👉 Select the **subscriber** message client. (a message client = a service instance of SAP Event Mesh)
     👉 Go to the **Queue** and filter for your application_id (Environment Variable of the CAP application) that you have identified in the previous exercise. 
