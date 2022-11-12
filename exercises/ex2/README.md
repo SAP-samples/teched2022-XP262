@@ -25,7 +25,9 @@ SAP Event Mesh is a fully managed service on SAP BTP and offers a management das
 
 > A combination of a Queue and a Topic is known as a Queue Subscription. See [Event Mesh Default Plan Concepts](https://help.sap.com/docs/SAP_EM/bf82e6b26456494cbdd197057c09979f/36485a71c98e4bb7ac942148ae6ebfad.html?locale=en-US) for more details.
 
-    👉 Navigate to **Message Clients**. 
+The fact that the CAP application has been deployed means the queue should have been created. Let's find it.
+
+    👉 In the SAP Event Mesh management dashboard, Navigate to **Message Clients**. 
     👉 Select the **subscriber** message client. (a message client = a service instance of SAP Event Mesh)
     👉 Go to the **Queue** and filter for your application_id (Environment Variable of the CAP application) that you have identified in the previous exercise. 
 
