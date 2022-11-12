@@ -2,9 +2,9 @@
 
 Logging and monitoring are often overlooked when your application is operating correctly ... but what if that isn't the case?
 
-SAP Business Technology uses the Application Logging service to provide developers and administrators with not only CLI access to log output but also a Kibana dashboard for logging and monitoring purposes.
+The SAP Business Technology platform offers the Application Logging service to provide developers and administrators with not only CLI access to log output but also a Kibana dashboard for logging and monitoring purposes.
 
-When something goes wrong with an application, developers usually use the Cloud Foundry CLI to directly analyze the log output. However, because you cannot filter or search, the data is unstructured and unwieldy. The SAP BTP Kibana dashboard offers numerous ways to gain insights into your SAP BTP applications.
+When something goes wrong with an application, developers usually use the Cloud Foundry CLI to directly analyze the log output. However, because the log data itself is complex and often JSON-based encapsulations of multiple values, it's not easy to filter or search. The SAP BTP Kibana dashboard offers numerous ways to gain insights into your SAP BTP based applications.
 
 Logging and monitoring are crucial parts of cloud native architectures. Applications on the SAP BTP, Cloud Foundry runtime, such as yours in this session, are not exempt from this. As a result, we'd like to look at the Application Logging Service for SAP BTP, which allows us to use the pre-configured ELK stack (Elastic Search, Logstash, Kibana) with only one additional service binding. However, the Application Logging Service for SAP BTP is far from the only solution for logging and monitoring SAP BTP artifacts: *[DevOps with SAP BTP: Monitor & Operate](https://blogs.sap.com/2020/01/13/devops-with-sap-cloud-platform-monitor-operate/comment-page-1/#comment-634567)
 
