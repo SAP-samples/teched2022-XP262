@@ -38,7 +38,7 @@ The initial dasbhoard contains a lot of information that you might not be intere
 
 2. Filter for your particular *Component*, the CAP application. Because your user should only have access to one environment, there is no need to filter for *Organizations* (Cloud Foundry organizations) and *Spaces* (Cloud Foundry spaces).
 
-  👉 **Hover** the line of with your application name, BPVerification-srv-\<STUDENT> and press the **+** icon to add this entry to your filter.  
+  👉 **Hover** over the line containing your application name, BPVerification-srv-\<STUDENT> and press the **+** icon to add this entry to your filter.
 
   ![add application name to filter](./images/add_app_to_filter.png)
 
@@ -64,7 +64,7 @@ This filter will remain active throughout your browsing session but you can remo
 
   This should give you a good idea, for example, when your application has been started and bulk-processed all the events in your SAP Event Mesh Queue. All of the events also contain business partners created by others in the SAP S/4HANA system.
 
-  👉 Change the **msg* filter you have just created and adjust the value entry to one of the business partners you have created. That way you can follow along how which operations (processing event, reading from SAP S/4HANA through SAP Cloud Connector, updating table in HDI Container on SAP HANA Cloud) have been made for a single business partner. 
+  👉 Change the **msg** filter you have just created and adjust the value entry to one of the business partners you have created. That way you can follow along how the operations (processing event, reading from SAP S/4HANA through SAP Cloud Connector, updating table in HDI Container on SAP HANA Cloud) have been made for a single business partner.
 
   ![adjust msg filter](./images/logs_for_spec_bp.png)
 
