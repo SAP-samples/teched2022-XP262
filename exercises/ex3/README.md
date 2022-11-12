@@ -6,9 +6,9 @@ The SAP Business Technology platform offers the Application Logging service to p
 
 When something goes wrong with an application, developers usually use the Cloud Foundry CLI to directly analyze the log output. However, because the log data itself is complex and often JSON-based encapsulations of multiple values, it's not easy to filter or search. The SAP BTP Kibana dashboard offers numerous ways to gain insights into your SAP BTP based applications.
 
-Logging and monitoring are crucial parts of cloud native architectures. Applications on the SAP BTP, Cloud Foundry runtime, such as yours in this session, are not exempt from this. As a result, we'd like to look at the Application Logging Service for SAP BTP, which allows us to use the pre-configured ELK stack (Elastic Search, Logstash, Kibana) with only one additional service binding. However, the Application Logging Service for SAP BTP is far from the only solution for logging and monitoring SAP BTP artifacts: *[DevOps with SAP BTP: Monitor & Operate](https://blogs.sap.com/2020/01/13/devops-with-sap-cloud-platform-monitor-operate/comment-page-1/#comment-634567)
+Logging and monitoring are crucial parts of cloud native architectures. Applications on the SAP BTP, Cloud Foundry runtime, such as yours in this session, are not exempt from this. As a result, we'd like to look at the Application Logging Service for SAP BTP, which allows us to use the pre-configured ELK stack (Elastic Search, Logstash, Kibana) with only one additional service binding. However, the Application Logging Service for SAP BTP is far from the only solution for logging and monitoring SAP BTP artifacts: see [DevOps with SAP BTP: Monitor & Operate](https://blogs.sap.com/2020/01/13/devops-with-sap-cloud-platform-monitor-operate/comment-page-1/#comment-634567) for some discussion on this.
 
-## Exercise 3.1 Open the Kibana (K in EL*K* Stack) Dashboard via SAP BTP Cockpit
+## Exercise 3.1 Open the Kibana Dashboard via SAP BTP Cockpit
 
 1. Firstly, navigate to the Kibana Dasbhoard using the SAP BTP Cockpit. 
 
@@ -22,7 +22,7 @@ Logging and monitoring are crucial parts of cloud native architectures. Applicat
 
   👉 **Open Kibana Dashboard**. 
 
- > The logs on this page are a good place to start because they are more structured than the log output from the Cloud Foundry CLI. You could already begin your exploratory searches.. But that is not the focus of this exercise.
+ > The logs on this page are a good place to start because some of the log content that is output raw from the CF CLI, has been initially parsed into time, category, log type and the actual message (which is still presented here in raw format). You could already begin your exploratory searches, but that is not the focus of this exercise.
 
   👉 In case you are asked for authentication, enter the following origin key (***tdcteched1-platform***) from the identity provider and sign in with alternative identity provider. 
 
