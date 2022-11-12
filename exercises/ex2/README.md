@@ -83,18 +83,28 @@ The business partner has now been created in the SAP S/4HANA system. Consequentl
 
 2. Let's see what the message contains to better understand how the extension application processes the message. 
 
-    👉 Navigate to **Test** in the side menu. Open your particular Queue in the **Consume Messages section** (filter for **srv-\<STUDENT>/** or your application_id). 
+    👉 Navigate to **Test** in the side menu. Open your particular Queue in the **Consume Messages section** (filter for **srv-\<STUDENT>/** or your application_id). Also select **subscriber** as the message client.
 
-    You should get the same information about your Queue as you had in the recent view.
+    You should get the same information about your Queue as you had in the previous view.
 
 3. 👉 Hit **Consume Message** to take the first message that has been sent from the Queue. (*Consuming* means that this message is permanently removed from the Queue.)
+
     ![New message in the Queue](./images/test_queue.png)
 
-
-This is the message:
+This is the message (pretty printed with whitespace for easier reading):
 
 ```json
-{"type":"sap.s4.beh.businesspartner.v1.BusinessPartner.Created.v1","specversion":"1.0","source":"tfe/bp/em","id":"YEW9iQHNHu2S3sv2ubtlkQ==","time":"2022-10-13T12:55:54Z","datacontenttype":"application/json","data":{"BusinessPartner":"1000681"}}
+{
+  "type": "sap.s4.beh.businesspartner.v1.BusinessPartner.Created.v1",
+  "specversion": "1.0",
+  "source": "tfe/bp/em",
+  "id": "YEW9iQHNHu2S3sv2ubtlkQ==",
+  "time": "2022-10-13T12:55:54Z",
+  "datacontenttype": "application/json",
+  "data": {
+    "BusinessPartner": "1000681"
+  }
+}
 ```
 > The format of the events follows the [CloudEvents specification](https://github.com/cloudevents/spec)
 
