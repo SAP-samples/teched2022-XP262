@@ -2,13 +2,13 @@
 
 Logging and monitoring are often overlooked when your application is operating correctly ... but what if that isn't the case?
 
-SAP Business Technology uses the Application Logging service to provide developers and administrators with not only CLI access to log output but also a Kibana dashboard for logging and monitoring purposes.
+The SAP Business Technology platform offers the Application Logging service to provide developers and administrators with not only CLI access to log output but also a Kibana dashboard for logging and monitoring purposes.
 
-When something goes wrong with an application, developers usually use the Cloud Foundry CLI to directly analyze the log output. However, because you cannot filter or search, the data is unstructured and unwieldy. The SAP BTP Kibana dashboard offers numerous ways to gain insights into your SAP BTP applications.
+When something goes wrong with an application, developers usually use the Cloud Foundry CLI to directly analyze the log output. However, because the log data itself is complex and often JSON-based encapsulations of multiple values, it's not easy to filter or search. The SAP BTP Kibana dashboard offers numerous ways to gain insights into your SAP BTP based applications.
 
-Logging and monitoring are crucial parts of cloud native architectures. Applications on the SAP BTP, Cloud Foundry runtime, such as yours in this session, are not exempt from this. As a result, we'd like to look at the Application Logging Service for SAP BTP, which allows us to use the pre-configured ELK stack (Elastic Search, Logstash, Kibana) with only one additional service binding. However, the Application Logging Service for SAP BTP is far from the only solution for logging and monitoring SAP BTP artifacts: *[DevOps with SAP BTP: Monitor & Operate](https://blogs.sap.com/2020/01/13/devops-with-sap-cloud-platform-monitor-operate/comment-page-1/#comment-634567)
+Logging and monitoring are crucial parts of cloud native architectures. Applications on the SAP BTP, Cloud Foundry runtime, such as yours in this session, are not exempt from this. As a result, we'd like to look at the Application Logging Service for SAP BTP, which allows us to use the pre-configured ELK stack (Elastic Search, Logstash, Kibana) with only one additional service binding. However, the Application Logging Service for SAP BTP is far from the only solution for logging and monitoring SAP BTP artifacts: see [DevOps with SAP BTP: Monitor & Operate](https://blogs.sap.com/2020/01/13/devops-with-sap-cloud-platform-monitor-operate/comment-page-1/#comment-634567) for some discussion on this.
 
-## Exercise 3.1 Open the Kibana (K in EL*K* Stack) Dashboard via SAP BTP Cockpit
+## Exercise 3.1 Open the Kibana Dashboard via SAP BTP Cockpit
 
 1. Firstly, navigate to the Kibana Dasbhoard using the SAP BTP Cockpit. 
 
@@ -22,7 +22,7 @@ Logging and monitoring are crucial parts of cloud native architectures. Applicat
 
   👉 **Open Kibana Dashboard**. 
 
- > The logs on this page are a good place to start because they are more structured than the log output from the Cloud Foundry CLI. You could already begin your exploratory searches.. But that is not the focus of this exercise.
+ > The logs on this page are a good place to start because some of the log content that is output raw from the CF CLI, has been initially parsed into time, category, log type and the actual message (which is still presented here in raw format). You could already begin your exploratory searches, but that is not the focus of this exercise.
 
   👉 In case you are asked for authentication, enter the following origin key (***tdcteched1-platform***) from the identity provider and sign in with alternative identity provider. 
 
@@ -32,13 +32,13 @@ Logging and monitoring are crucial parts of cloud native architectures. Applicat
 
 ## Exercise 3.2 Get used to filters 
 
-The initial dasbhoard contains a lot of information that you might not be interested in. Actually, it contains information for all Cloud Foundry organizations and spaces in a single Cloud Foundry region to which you have been assigned. (Regardless of subaccount) Since you're looking for your specific application, let's make sure you only get the relevant insights.
+The initial dasbhoard contains a lot of information that you might not be interested in. Actually, it contains information for all Cloud Foundry organizations and spaces in a single Cloud Foundry region to which you have been assigned. Since you're looking for your specific application, let's make sure you only get the relevant insights.
 
 1. 👉 Bookmark this page as **Kibana dashboard**. You are going to use this page in the further exercises as well. 
 
 2. Filter for your particular *Component*, the CAP application. Because your user should only have access to one environment, there is no need to filter for *Organizations* (Cloud Foundry organizations) and *Spaces* (Cloud Foundry spaces).
 
-  👉 **Hover** the line of with your application name, BPVerification-srv-\<STUDENT> and press the **+** icon to add this entry to your filter.  
+  👉 **Hover** over the line containing your application name, BPVerification-srv-\<STUDENT> and press the **+** icon to add this entry to your filter.
 
   ![add application name to filter](./images/add_app_to_filter.png)
 
@@ -64,7 +64,7 @@ This filter will remain active throughout your browsing session but you can remo
 
   This should give you a good idea, for example, when your application has been started and bulk-processed all the events in your SAP Event Mesh Queue. All of the events also contain business partners created by others in the SAP S/4HANA system.
 
-  👉 Change the **msg* filter you have just created and adjust the value entry to one of the business partners you have created. That way you can follow along how which operations (processing event, reading from SAP S/4HANA through SAP Cloud Connector, updating table in HDI Container on SAP HANA Cloud) have been made for a single business partner. 
+  👉 Change the **msg** filter you have just created and adjust the value entry to one of the business partners you have created. That way you can follow along how the operations (processing event, reading from SAP S/4HANA through SAP Cloud Connector, updating table in HDI Container on SAP HANA Cloud) have been made for a single business partner.
 
   ![adjust msg filter](./images/logs_for_spec_bp.png)
 
