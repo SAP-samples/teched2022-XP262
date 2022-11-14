@@ -109,7 +109,7 @@ Here you also have your own deployed instance.
 
 8. 👉 Go to **Instances and subscriptions**. Select the service instance **BPVerification-destination-service-\<STUDENT>**. A new tab will open with the details of this service instance. 
    
-    This service instance is bound to the HTML5 Application Repository instance for each frontend application and is used to provide URL endpoints.
+    This service instance is related to the HTML5 Application Repository instance for each frontend application and is used to provide URL endpoints.
     ![Destination Service instance for HTML5 app repo](./images/destservice_instance.png) 
 
 9.  👉 Navigate to **Destinations** and select the Destination **BPVerification-srv-api-\<STUDENT>**. 
