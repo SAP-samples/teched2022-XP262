@@ -33,10 +33,10 @@ The high level architecture is as follows:
 
     ![Open your html5 app menu](./images/listhtml5apps.png) 
 
-3. A new browser tab will open, displaying a tile on an SAP Fiori Launchpad with an SAP Fiori application. This application displays data from your HDI Container on SAP HANA Cloud, as served by your own CAP application.
+3. A new browser tab will open, displaying a tile with an SAP Fiori application. This application displays data from your HDI Container on SAP HANA Cloud, as served by your own CAP application.
    
     👉 Select the tile to open the SAP Fiori application. 
-    ![SAP Fiori Launchpad with one app](./images/html5-launchpad.png) 
+    ![SAP Fiori application](./images/html5-launchpad.png) 
 
 4. A list of (one or more) Business Partners appears. Those Business Partners are all coming from your HDI Container on SAP HANA Cloud. Those records have either been loaded via sample files or have been processed as a result of an event via SAP Event Mesh.
    
