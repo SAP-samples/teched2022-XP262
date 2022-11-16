@@ -25,7 +25,7 @@ If you complete an exercise early, please resist the urge to go on to the next o
 
 ## Exercises
 
-- [Getting Started](exercises/ex0/)
+- [Exercise 0 - Getting Started](exercises/ex0/)
 - [Exercise 1 - Get to know your own extension application artifacts on SAP BTP](exercises/ex1/)
 - [Exercise 2 - Explore SAP Event Mesh in action](exercises/ex2)
 - [Exercise 3 - Logging and Monitoring capabilities of SAP BTP with Application Logging service and Kibana Dashboards](exercises/ex3/)
