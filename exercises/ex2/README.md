@@ -30,6 +30,8 @@ SAP Event Mesh is a fully managed service on SAP BTP and offers a management das
     👉 In the SAP Event Mesh management dashboard, Navigate to **Message Clients**. 
 
     👉 Students with \<STUDENT> number 01 - 47 select the **subscriber** message client and the students with \<STUDENT> number 48 - 60 select the **subscriber2** message client (a message client = a service instance of SAP Event Mesh)
+    
+    ![Message client](./images/subscriber.png)
 
     👉 Go to the **Queue** and filter for your application_id (Environment Variable of the CAP application) that you have identified in the previous exercise. 
 
