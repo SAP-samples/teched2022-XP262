@@ -37,7 +37,7 @@ SAP Event Mesh is a fully managed service on SAP BTP and offers a management das
 
     ![Search for your own Queue](./images/student_queue.png)
 
-    There should only be one Queue listed now. This Queue is linked to your CAP application and receives events from SAP S/4HANA - regardless of whether the other applications have processed those events or not, because all other applications have their own Queue and only consume events from their own Queue. Your Queue should be empty because all business partners changes should have been processed by your CAP application. 
+    There should only be one Queue listed now. This Queue is linked to your CAP application and receives events from SAP S/4HANA - regardless of whether the other applications have processed those events or not, because all other applications have their own Queue and only consume events from their own Queue.  
 
 2. Queues are where messages are available for consumption. Queues can be subscribed to Topics (and they are in this case). Topics are named logical channels to which messages are published. Subscribers in a Topic-based system receive all messages published to the Topics to which they have subscribed. All subscribers to a Topic receive their own copy of the same message. 
 
