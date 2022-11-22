@@ -1,3 +1,5 @@
+[![REUSE status](https://api.reuse.software/badge/github.com/SAP-samples/teched2022-XP262)](https://api.reuse.software/info/github.com/SAP-samples/teched2022-XP262)
+
 # XP262 - How to Build Business Extensions and Implement Use Cases on SAP BTP
 
 ## Description
